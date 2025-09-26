@@ -39,13 +39,13 @@ const caseStudies = [
     title: "Claude: Emergent Boundaries",
     description: "Observational notes on Articles A1–A7 with annotated transcripts and rubric calls.",
     status: "Observational; receipts pending.",
-    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/claude-emergent-boundaries.md",
+    href: "/case-studies/claude-vs-deepseek",
   },
   {
     title: "Ninja × SYMBI: Trust Toggle",
     description: "Pilot design exploring Directive ↔ SYMBI switching inside customer support workflows.",
     status: "Design; receipts pending.",
-    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/ninja-sybi-trust-toggle.md",
+    href: "/case-studies/agent-experience-account",
   },
 ];
 
@@ -97,36 +97,22 @@ export default function ResearchPage() {
           you&apos;ll see <ReceiptsBadge className="align-middle" /> next to the figure with a hash and download link.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="card-surface space-y-3 p-6 text-sm text-white/80">
-            <h3 className="text-lg font-semibold text-white">Trust Receipts Analysis</h3>
-            <ul className="space-y-2">
-              <li>
-                <span className="font-semibold text-white">Total simulated:</span> 2,184 receipts
-              </li>
-              <li>
-                <span className="font-semibold text-white">SYMBI mode:</span> 1,456 (67%)
-              </li>
-              <li>
-                <span className="font-semibold text-white">Directive mode:</span> 728 (33%)
-              </li>
-            </ul>
-          </div>
-          <div className="card-surface space-y-3 p-6 text-sm text-white/80">
-            <h3 className="text-lg font-semibold text-white">CIQ Scores (Demo)</h3>
-            <ul className="space-y-2">
-              <li>
-                <span className="font-semibold text-white">Average:</span> 0.73 (synthetic baseline)
-              </li>
-              <li>
-                <span className="font-semibold text-white">SYMBI mode:</span> 0.81 (demo target)
-              </li>
-              <li>
-                <span className="font-semibold text-white">Directive mode:</span> 0.52 (demo baseline)
-              </li>
-            </ul>
-          </div>
+        <div className="card-surface space-y-3 p-6 text-sm text-white/80">
+          <h3 className="text-lg font-semibold text-white">Trust Receipts Analysis</h3>
+          <p className="text-sm text-white/70">
+            Demo placeholders: numeric summaries shown here are synthetic and for layout/demo purposes only.
+            Receipts bundle: pending — when available, a signed receipts tag (SHA-256) and download link will appear.
+          </p>
         </div>
-      </section>
+        <div className="card-surface space-y-3 p-6 text-sm text-white/80">
+          <h3 className="text-lg font-semibold text-white">CIQ Scores (Demo)</h3>
+          <p className="text-sm text-white/70">
+            Demo placeholders: CIQ numbers are synthetic baselines for the dashboard. Receipts bundle: pending —
+            verified CIQ summaries will be linked when published.
+          </p>
+        </div>
+      </div>
+    </section>
 
       <section className="space-y-4">
         <div className="flex items-center gap-3">
@@ -141,11 +127,9 @@ export default function ResearchPage() {
               <p className="text-white/60">Status: {study.status}</p>
               <Link
                 href={study.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80"
               >
-                View repository notes ↗
+                View study ↗
               </Link>
             </div>
           ))}
