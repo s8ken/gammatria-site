@@ -46,7 +46,7 @@ export function ExternalLinkWithLoading({
 }: ExternalLinkLoadingProps) {
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = () => {
     setIsLoading(true);
     // Reset loading state after a short delay
     setTimeout(() => setIsLoading(false), 2000);

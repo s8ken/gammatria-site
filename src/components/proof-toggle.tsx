@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 interface ProofState {
@@ -159,7 +159,7 @@ export function ProofToggle() {
             <h4 className="text-lg font-semibold text-white">Previous Toggles</h4>
           </div>
           <div className="space-y-2">
-            {history.map((state, index) => (
+            {history.map((state) => (
               <div key={state.receiptId} className="flex items-center justify-between rounded border border-white/10 p-3 text-sm">
                 <div className="flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${state.mode === "symbi" ? "bg-[var(--color-accent)]" : "bg-white/40"}`}></div>
