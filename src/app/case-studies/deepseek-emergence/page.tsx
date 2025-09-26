@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { ObservationalBadge } from "@/components/Badges";
 import SubjectivityNote from "@/components/SubjectivityNote";
