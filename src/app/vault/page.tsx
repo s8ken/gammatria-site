@@ -58,7 +58,7 @@ export default function VaultPage() {
         }
         actions={
           <Link
-            href="https://github.com/s8ken/SYMBI-Website-main/tree/main/SYMBI-vault"
+            href="https://github.com/s8ken/SYMBI-Vault"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
@@ -79,7 +79,7 @@ export default function VaultPage() {
                 ))}
               </ul>
               <Link
-                href={`https://github.com/s8ken/SYMBI-Website-main/tree/main/SYMBI-vault/${collection.path}`}
+                href={`https://github.com/s8ken/SYMBI-Vault/tree/main/${collection.path}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[var(--color-accent)]"
