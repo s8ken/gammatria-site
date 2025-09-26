@@ -125,12 +125,12 @@ export default function HomePage() {
             Open the Vault
           </Link>
           <Link
-            href="https://symbi.world/proof"
+            href="https://symbi.world"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
           >
-            Launch /proof
+            SYMBI
           </Link>
           </div>
         </div>
