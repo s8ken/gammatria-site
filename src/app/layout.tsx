@@ -4,7 +4,6 @@ import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { WithMDX } from "./mdx-components";
 import AnalyticsClient from "./analytics-client";
 import Consent from "@/components/Consent";
 
@@ -58,9 +57,7 @@ export default function RootLayout({
         <Consent />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
-          <WithMDX>
-            <main className="flex-1 pb-16 pt-10">{children}</main>
-          </WithMDX>
+          <main className="flex-1 pb-16 pt-10">{children}</main>
           <SiteFooter />
         </div>
         {process.env.NEXT_PUBLIC_GA_ID ? (

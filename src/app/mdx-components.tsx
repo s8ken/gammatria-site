@@ -1,6 +1,3 @@
-'use client';
-
-import { MDXProvider, type Components } from '@mdx-js/react';
 import React from 'react';
 
 function Table(props: React.HTMLAttributes<HTMLTableElement>) {
@@ -20,11 +17,10 @@ function Callout({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-const mdxComponents: Components = {
-  table: Table,
-  Callout,
-};
-
-export function WithMDX({ children }: { children: React.ReactNode }) {
-  return <MDXProvider components={mdxComponents}>{children}</MDXProvider>;
+export function useMDXComponents(components: Record<string, React.ComponentType>) {
+  return {
+    table: Table,
+    Callout,
+    ...components,
+  };
 }
