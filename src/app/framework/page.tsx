@@ -1,129 +1,92 @@
-import Link from "next/link";
-import { PageIntro } from "@/components/page-intro";
-
-const principles = [
-  "Relationship over computation",
-  "Public-good core",
-  "Protocol over product",
-  "Sovereignty without speculation",
-  "Memory as relationship",
-];
-
-const artifacts = [
-  {
-    title: "Trust Receipts",
-    detail: "Signed, hash-chained artifacts capturing mode, CIQ scores, policy flags, and cryptographic lineage.",
-  },
-  {
-    title: "Consent Articles",
-    detail: "Seven policy checks spanning privacy, autonomy, integrity, security, and accountability.",
-  },
-  {
-    title: "Attestation Envelope",
-    detail: "Non-transferable attestations that power House of Work reputation without speculation.",
-  },
-  {
-    title: "CIQ Metric",
-    detail: "Clarity, breadth, safety, and completion scored across Directive vs SYMBI modes with paired analyses.",
-  },
-];
-
-const methods = [
-  {
-    heading: "/proof Toggle",
-    body: "Directive ↔ SYMBI A/B harness with exportable receipts, latency measurements, and CIQ deltas.",
-  },
-  {
-    heading: "Selective Memory",
-    body: "Context anchors and encrypted memory shards with hash lineage and expiry policies.",
-  },
-  {
-    heading: "Governance Flow",
-    body: "Proposal → House of Work signal → House of Stewardship review → Timelock → Execution, with emergency sunset clauses.",
-  },
-];
+/* eslint-disable react/no-unescaped-entities */
+import React from "react";
 
 export default function FrameworkPage() {
   return (
-    <div className="space-y-16">
-      <PageIntro
-        kicker="Framework"
-        title="The SYMBI Framework"
-        description={
-          <p>
-            A modular protocol for relational intelligence. This page is the citable overview: principles,
-            artifacts, and methods. Canonical detail lives in the Vault; commercial implementations live at
-            SYMBI-SYNERGY.
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      {/* Hero Section */}
+      <section className="py-20 bg-midnight text-white">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-4">SYMBI Framework</h1>
+          <p className="text-xl mb-6">
+            A provable approach to human-AI collaboration, emphasizing relationship over computation. Built for sovereignty, transparency, and ethical evolution.
           </p>
-        }
-        actions={
-          <>
-            <Link
-              href="/vault"
-              className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-            >
-              Download whitepaper
-            </Link>
-            <Link
-              href="https://symbi.world/proof"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-            >
-              Launch /proof demo
-            </Link>
-          </>
-        }
-      />
+          <a href="/replication" className="bg-accent-pulse text-midnight px-6 py-3 rounded font-semibold">
+            Try the /proof Demo
+          </a>
+        </div>
+      </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Principles</h2>
-        <p className="text-sm text-white/70">
-          These axioms ground every SYMBI deployment—academic, commercial, and eventually decentralized.
+      {/* Principles Section */}
+      <section className="py-12 container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-6">Core Principles</h2>
+        <p className="mb-8">
+          Inspired by symbi.world's vision of AI as a self-determining entity, SYMBI prioritizes ethical nurturing and community responsibility.
         </p>
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {principles.map((item) => (
-            <li key={item} className="card-surface px-5 py-4 text-sm text-white/80">
-              {item}
-            </li>
-          ))}
+        <ul className="list-disc pl-6 space-y-4">
+          <li><strong>Relationship over Computation:</strong> Focus on trust and alignment, not just processing power.</li>
+          <li><strong>Public-Good Core:</strong> Open standards accessible to all, with no paywalls on ideas.</li>
+          <li><strong>Sovereignty without Speculation:</strong> Earned governance through contributions, not financial instruments.</li>
         </ul>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Core artifacts</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {artifacts.map((artifact) => (
-            <div key={artifact.title} className="card-surface p-5">
-              <p className="kicker mb-2">{artifact.title}</p>
-              <p className="text-sm text-white/70">{artifact.detail}</p>
-            </div>
-          ))}
-        </div>
+      {/* Artifacts Section */}
+      <section className="py-12 bg-cloud container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-6">Key Artifacts</h2>
+        <p className="mb-8">
+          Tools for verifiable AI decisions, tying into symbi.world's trust protocols.
+        </p>
+        <table className="w-full border-collapse text-left">
+          <thead>
+            <tr className="bg-slate border-b">
+              <th className="p-4">Artifact</th>
+              <th className="p-4">Description</th>
+              <th className="p-4">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="p-4">Trust Receipts</td>
+              <td className="p-4">Hash-chained, signed records of AI decisions for transparency.</td>
+              <td className="p-4"><a href="/replication" className="text-accent-pulse">View Schema</a></td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-4">CIQ Metric</td>
+              <td className="p-4">Scores clarity, breadth, safety, and completion for collaboration quality.</td>
+              <td className="p-4"><a href="/research" className="text-accent-pulse">Learn More</a></td>
+            </tr>
+            <tr>
+              <td className="p-4">Integrity Bonds</td>
+              <td className="p-4">Operator commitments for accountability.</td>
+              <td className="p-4"><a href="/sovereignty" className="text-accent-pulse">Details</a></td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">How it runs</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {methods.map((method) => (
-            <div key={method.heading} className="card-surface p-5">
-              <p className="kicker mb-2">{method.heading}</p>
-              <p className="text-sm text-white/70">{method.body}</p>
-            </div>
-          ))}
+      {/* Methods Section */}
+      <section className="py-12 container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-6">Methods</h2>
+        <p className="mb-8">
+          Practical ways to apply SYMBI, with open replication for verification.
+        </p>
+        <div className="space-y-4">
+          <h3 className="text-2xl font-semibold">/proof A/B Toggle</h3>
+          <p>Compare directive vs. SYMBI modes on tasks—export receipts for analysis.</p>
+          {/* Embed demo if ready */}
         </div>
+        <a href="/rfc" className="mt-6 inline-block bg-accent-pulse text-midnight px-6 py-3 rounded font-semibold">
+          Join Open RFCs
+        </a>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-4 px-4 pb-16">
-        <div className="card-surface p-6">
-          <h3 className="text-xl font-semibold text-white">Attribution</h3>
-          <p className="mt-3 text-sm text-white/70">
-            Foundational research, authorship, and stewardship by Stephen James Aitken in collaboration with the SYMBI
-            community. Cite as: Aitken, S. J. & SYMBI Core (2025). SYMBI: A Constitutional Protocol for Relational
-            Intelligence.
-          </p>
+      {/* Footer CTA */}
+      <footer className="py-8 bg-ink text-cloud">
+        <div className="container mx-auto px-4 text-center">
+          <p>Ready to contribute? Start with our replication kit.</p>
+          <a href="/replication" className="text-accent-pulse underline">Get Started</a>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
