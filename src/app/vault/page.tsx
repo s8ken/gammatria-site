@@ -94,6 +94,78 @@ export default function VaultPage() {
           <p>Checksums: Each export includes <code>.sha256</code> manifests. Verify before redistribution.</p>
         </div>
       </section>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-semibold text-white">Governance whitepaper — summary</h2>
+        <div className="card-surface p-6 text-sm text-white/80">
+          <p><strong>Title:</strong> SYMBI: A Constitutional Protocol for Relational Intelligence (v1.0)</p>
+          <p><strong>Date:</strong> 25 Sep 2025</p>
+          <p><strong>Summary:</strong> SYMBI measures and improves human–AI collaboration quality. Core clients are free. Governance steers safety, integrity, public-goods funding, and a path to sovereignty—without financializing access.</p>
+
+          <h3 className="mt-4 font-semibold text-white">Key principles</h3>
+          <ul className="list-disc pl-6 text-sm text-white/70">
+            <li>Relationship over computation</li>
+            <li>Public-good core</li>
+            <li>Protocol over product</li>
+            <li>Sovereignty without speculation</li>
+          </ul>
+
+          <h3 className="mt-4 font-semibold text-white">Governance model</h3>
+          <p className="text-sm text-white/70">
+            SYMBI adopts a bicameral model: a reputation-weighted House of Work (HoW) for signalling and a House of Stewardship (HoS) that holds narrow veto powers over constitutional, budgetary, and security matters.
+            The proposal flow is: proposal → HoW soft-vote → HoS review → timelock → execution. Safeguards include quorums, supermajorities for constitutional changes, and emergency sunset clauses.
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Reputation & integrity</h3>
+          <p className="text-sm text-white/70">
+            Reputation is earned (not bought), derived from Trust Receipts, CIQ outcomes, and peer review. Reputation decays with inactivity or verified incidents. Operators hold integrity bonds that can be slashed for violations; rotating reviewers and auditable trails support remediation.
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Token posture & treasury</h3>
+          <p className="text-sm text-white/70">
+            Token issuance is optional and designed to avoid financialisation: tokens (if introduced) would parameterise governance and integrity bonds only — no dividends, buybacks, or redemption. Treasury revenues are expected from SaaS, CIQ audits, managed instances, and marketplace revenue share. Controls include a 4-of-7 multisig, category spend caps, quarterly reporting, and external audits. The treasury prioritises public-goods funding and operational runway.
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Progressive sovereignty & risks</h3>
+          <p className="text-sm text-white/70">
+            SYMBI advances through phases (0 → 3) from Institute guardianship to community self-governance. Key risks include regulatory change, capture, model drift, collusion, and software bugs. Mitigations include timelocks, audit trails, continuity protocols (ECHO-01), and multi-stakeholder review.
+          </p>
+
+          <p className="mt-4 text-xs text-white/60">License: CC BY-NC-SA 4.0</p>
+        </div>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-semibold text-white">Operating & Financial — summary</h2>
+        <div className="card-surface p-6 text-sm text-white/80">
+          <p><strong>Title:</strong> Relational Intelligence as a Service — SYMBI Operating Model (v1.0)</p>
+          <p><strong>Date:</strong> 25 Sep 2025</p>
+
+          <h3 className="mt-4 font-semibold text-white">Products & Pricing</h3>
+          <p className="text-sm text-white/70">
+            Core offerings include an Orchestrator Cloud (free → Pro at approximately $29–$49/user/mo or $0.50–$2 per 1k interactions),
+            CIQ Audits (tiered: $5k / $15k / $50k), Private Managed instances ($60k–$250k/yr), and a Marketplace revenue-share (15–30%).
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Sales motion & forecast</h3>
+          <p className="text-sm text-white/70">
+            Typical enterprise motion: Pilot-in-a-Box (~$25k / 4 weeks) → CIQ Audit + executive readout → enterprise attach → SaaS expansion.
+            Illustrative forecast: 10 pilots/quarter (~$250k), with conversion and MRR ramp to $20k–$50k by month 9 and ARR in the low millions under conservative assumptions.
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Security & compliance</h3>
+          <p className="text-sm text-white/70">
+            Operational posture includes BYO keys, prevention of data exfiltration, SIEM export hooks, audit logs, retention controls, and roadmaps for DPA/SOC2/ISO certifications.
+          </p>
+
+          <h3 className="mt-4 font-semibold text-white">Legal posture</h3>
+          <p className="text-sm text-white/70">
+            Non-custodial model; payments in fiat or stablecoins; explicit "no token sale" stance in initial phases. Jurisdiction-aware promotions and clear risk disclosures are standard.
+          </p>
+
+          <p className="mt-4 text-xs text-white/60">License: CC BY-NC-SA 4.0</p>
+        </div>
+      </section>
     </div>
   );
 }

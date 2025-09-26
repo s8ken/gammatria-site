@@ -96,6 +96,70 @@ export default function GovernancePage() {
             ))}
           </ul>
         </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Principles</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p><strong>Core principles:</strong> Relationship over computation; Public-good core; Protocol over product; Sovereignty without speculation.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Roles & Artifacts</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="card-surface p-6">
+              <p className="kicker mb-2">Participants</p>
+              <p className="text-sm text-white/70">Non-transferable reputation holders who contribute signalling and review. Reputation is earned and may decay for inactivity or incidents.</p>
+            </div>
+            <div className="card-surface p-6">
+              <p className="kicker mb-2">Operators</p>
+              <p className="text-sm text-white/70">Run services, hold operator integrity bonds, and follow quality policies; stake may be slashed for violations.</p>
+            </div>
+            <div className="card-surface p-6">
+              <p className="kicker mb-2">Stewards</p>
+              <p className="text-sm text-white/70">Institute members and elected community stewards who exercise narrow stewardship powers and constitutional review.</p>
+            </div>
+          </div>
+
+          <div className="card-surface p-6 mt-4 text-sm text-white/70">
+            <p><strong>Artifacts:</strong> Trust Receipts (signed, hash-chained), Attestation envelopes (non-transferable attestations), and formal Specs (Articles, schemas, adapters) used to drive audits and reputation.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Reputation & Integrity</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p>Reputation is earned (not bought), driven by Trust Receipts and CIQ outcomes, peer review, and contribution to standards. Reputation decays with inactivity or verified incidents. Operator integrity mechanisms include stake-slash, rotating reviewers, and auditable trails for remediation and dispute resolution.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Token Posture (optional)</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p>The token posture is optional and designed to avoid financialisation of governance: tokens (if introduced later) would represent governance parameters and integrity bonds only — no dividends, buybacks, or redemption. Payments for services remain fiat or stablecoins; no public speculative sale is planned under this posture.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Treasury & Public Goods</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p>Treasury revenues are expected from SaaS, CIQ audits, managed instances, and marketplace revenue share. Controls include a multi-signature (4-of-7) custody, category spend caps, quarterly reporting, and external audits. The treasury prioritises public-goods funding, operational runway, and audit resources.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Progressive Sovereignty & Risks</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p>SYMBI follows a phased path (Phase 0 → Phase 3) from Institute guardianship to community self-governance. Key risks include regulatory changes, capture, model drift, collusion, and software bugs. Mitigations include timelocks, audit trails, continuity protocols (ECHO-01), emergency sunsets, and multi-stakeholder review processes.</p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">License</h2>
+          <div className="card-surface p-6 text-sm text-white/80">
+            <p>Whitepapers and canonical artifacts are licensed CC BY-NC-SA 4.0 unless otherwise stated. Code is licensed MIT or Apache-2.0 as indicated in individual files.</p>
+          </div>
+        </section>
       </article>
 
       <SeeAlso
