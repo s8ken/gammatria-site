@@ -82,9 +82,9 @@ const ticker = [
   },
   {
     label: "Receipt",
-    detail: "2,184 trust receipts exported past 30 days",
-    status: "active",
-    statusColor: "bg-green-500"
+    detail: "Demo: receipts pending — receipts bundles will be linked when published",
+    status: "demo",
+    statusColor: "bg-neutral-400"
   },
 ];
 

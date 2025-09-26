@@ -13,13 +13,13 @@ const studies = [
     title: "Claude: Emergent Boundaries",
     description: "Observational notes on how Claude surfaces consent scopes (Articles A1–A7) under different prompts.",
     status: "Observational; receipts pending.",
-    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/claude-emergent-boundaries.md",
+    href: "/case-studies/claude-vs-deepseek",
   },
   {
     title: "Ninja × SYMBI: Trust Toggle",
     description: "Pilot design for flipping between Directive and SYMBI modes in support triage while logging trust receipts.",
     status: "Design; receipts pending.",
-    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/ninja-sybi-trust-toggle.md",
+    href: "/case-studies/agent-experience-account",
   },
 ];
 
@@ -59,11 +59,9 @@ export default function CaseStudiesPage() {
               <p className="text-white/60">Status: {study.status}</p>
               <Link
                 href={study.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80"
               >
-                View repository notes ↗
+                View study ↗
               </Link>
             </article>
           ))}
