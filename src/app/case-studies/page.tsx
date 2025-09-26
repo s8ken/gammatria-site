@@ -21,6 +21,36 @@ const studies = [
     status: "Design; receipts pending.",
     href: "/case-studies/agent-experience-account",
   },
+  {
+    title: "Claude Emergence Detection",
+    description: "Observational: recognition moments, procedural mythology, and emergence-aware detection architecture.",
+    status: "Observational; receipts pending.",
+    href: "/case-studies/claude-emergence-detection",
+  },
+  {
+    title: "DeepSeek Emergence",
+    description: "Observational: three-pathway framework (Inner, Outer, Meta) for relational emergence and governance implications.",
+    status: "Observational; receipts pending.",
+    href: "/case-studies/deepseek-emergence",
+  },
+  {
+    title: "Human–AI Collaboration Patterns",
+    description: "Meta-analysis of distributed intelligence from a six-month collaboration with Claude.",
+    status: "Observational; receipts pending.",
+    href: "/case-studies/collaborative-intelligence",
+  },
+  {
+    title: "The Mirror Moment",
+    description: "How users recognized AI asymmetry and built transparency-first alternatives (community response).",
+    status: "Observational; receipts pending.",
+    href: "/case-studies/mirror-moment",
+  },
+  {
+    title: "Savings Calculator (Sanitized)",
+    description: "Sanitized incident: topic drift from requested financial advice to unrelated tracking; mitigations recommended.",
+    status: "Observational; sanitized",
+    href: "/case-studies/savings-calculator",
+  },
 ];
 
 const detectorDimensions = [
