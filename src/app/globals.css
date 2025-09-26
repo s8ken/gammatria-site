@@ -1,0 +1,372 @@
+@import "tailwindcss";
+
+:root {
+  --color-midnight: #0b1020;
+  --color-ink: #121826;
+  --color-slate: #2a3344;
+  --color-cloud: #e6e9f2;
+  --color-accent: #6cf0c2;
+  --color-amber: #f5c76d;
+  --color-berry: #c084fc;
+  --border-soft: rgba(230, 233, 242, 0.12);
+  --shadow-elevated: 0 24px 60px rgba(6, 10, 26, 0.45);
+  --grid-line: rgba(108, 240, 194, 0.16);
+  --font-inter: var(--font-inter);
+  --font-inter-tight: var(--font-inter-tight);
+  --font-jetbrains: var(--font-jetbrains);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-midnight: #0b1020;
+    --color-ink: #121826;
+    --color-slate: #2a3344;
+    --color-cloud: #f3f5fb;
+    --color-accent: #4adaaa;
+    --border-soft: rgba(18, 24, 38, 0.1);
+    --grid-line: rgba(76, 192, 160, 0.18);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@theme inline {
+  --color-midnight: var(--color-midnight);
+  --color-ink: var(--color-ink);
+  --color-slate: var(--color-slate);
+  --color-cloud: var(--color-cloud);
+  --color-accent: var(--color-accent);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-inter-tight);
+  --font-mono: var(--font-jetbrains);
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0b1020 0%, #1a202c 50%, #2d3748 100%),
+    radial-gradient(circle at 0% 0%, rgba(108, 240, 194, 0.08), transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(80, 108, 168, 0.12), transparent 45%);
+  color: var(--color-cloud);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(108, 240, 194, 0.25);
+  color: var(--color-cloud);
+}
+
+main {
+  min-height: 60vh;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.prose {
+  color: inherit;
+}
+
+.prose p {
+  margin-bottom: 1.2em;
+  line-height: 1.75;
+}
+
+.section-grid {
+  position: relative;
+}
+
+.section-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--grid-line) 50%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, var(--grid-line) 50%, transparent 100%);
+  mask: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0.8) 90%, transparent 100%);
+  opacity: 0.45;
+  pointer-events: none;
+  background-size: 160px 160px;
+}
+
+.card-surface {
+  background: rgba(18, 24, 38, 0.72);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  box-shadow: var(--shadow-elevated);
+  backdrop-filter: blur(14px);
+}
+
+.kicker {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(230, 233, 242, 0.62);
+  font-family: var(--font-jetbrains), monospace;
+}
+
+.page-title {
+  font-family: var(--font-inter-tight), "Inter Tight", var(--font-inter), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.table-dark {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table-dark th,
+.table-dark td {
+  border: 1px solid rgba(230, 233, 242, 0.12);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.table-dark th {
+  background: rgba(42, 51, 68, 0.65);
+  font-weight: 600;
+}
+
+.table-dark tbody tr:nth-child(even) {
+  background: rgba(18, 24, 38, 0.6);
+}
+
+blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  color: rgba(230, 233, 242, 0.8);
+  font-style: italic;
+}
+
+code, pre {
+  font-family: var(--font-jetbrains), "JetBrains Mono", monospace;
+  background: rgba(11, 16, 32, 0.75);
+  border-radius: 8px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Future Frameworks Style Enhancements */
+
+/* Glassmorphism Button Styles */
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: rgba(108, 240, 194, 0.15);
+  color: var(--color-accent);
+  border: 2px solid rgba(108, 240, 194, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-primary:hover {
+  background: rgba(108, 240, 194, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(108, 240, 194, 0.2);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-cloud);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-cloud);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Enhanced Card Animations */
+.card-surface {
+  background: rgba(18, 24, 38, 0.72);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  box-shadow: var(--shadow-elevated);
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-surface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-berry));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-surface:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(6, 10, 26, 0.6);
+}
+
+.card-surface:hover::before {
+  opacity: 1;
+}
+
+/* Floating Grid Animation */
+.hero-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(108,240,194,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Scroll Triggered Animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section Enhancements */
+.hero-section {
+  background: linear-gradient(135deg, #0b1020 0%, #1a202c 50%, #2d3748 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--color-cloud), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats Section Styling */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(108, 240, 194, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(108, 240, 194, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: var(--color-cloud);
+}
+
+/* Stats Grid Styling - Future Frameworks inspired */
+.stats-grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateX(4px);
+}
+
+@media (min-width: 640px) {
+  .stat-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
