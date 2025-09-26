@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Git workflow basics
+
+If you are collaborating on this project, follow these steps before merging changes into the `main` branch:
+
+1. **Confirm the branch is ready.** Make sure linting and automated tests pass locally and that any code review feedback has been resolved.
+2. **Create a pull request (PR).** A PR is a request to merge your branch into `main`. It lets teammates review the diff, leave comments, and approve the update.
+3. **Merge once approved.** After the PR is approved and checks succeed, use the platform's merge button (for example, on GitHub) to combine your branch into `main`.
+
+Keeping this loop—tests, PR, approval, merge—helps ensure the branch stays healthy and the history is easy to follow.

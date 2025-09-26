@@ -9,6 +9,8 @@ const primaryNav = [
   { label: "Ethics", href: "/ethics" },
   { label: "Governance", href: "/governance" },
   { label: "Research", href: "/research" },
+  { label: "Resonance", href: "/resonance" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Replication", href: "/replication" },
   { label: "Funding", href: "/funding" },
   { label: "Foundation", href: "/foundation" },
@@ -18,7 +20,6 @@ const primaryNav = [
 
 const callouts = [
   { label: "Vault", href: "/vault", accent: true },
-  { label: "Resonance", href: "/resonance" },
   {
     label: "YCQ Sonate",
     href: "https://yseeku.com",

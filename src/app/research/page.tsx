@@ -1,6 +1,12 @@
 import Link from "next/link";
-import { PageIntro } from "@/components/page-intro";
-import { ProofToggle } from "@/components/proof-toggle";
+
+import { DemoBadge, ObservationalBadge, ReceiptsBadge } from "@/components/Badges";
+import SubjectivityNote from "@/components/SubjectivityNote";
+
+export const metadata = {
+  title: "Research — SYMBI Resonate",
+  description: "Demo metrics, verification notes, and observational case studies for SYMBI framework research.",
+};
 
 const publications = [
   {
@@ -8,7 +14,7 @@ const publications = [
     summary:
       "Foundational whitepaper outlining the bicameral governance model, Trust Receipts, CIQ metric, and sovereignty roadmap.",
     date: "25 Sep 2025",
-    link: { href: "/vault#whitepapers", label: "Download PDF" },
+    link: { href: "/vault#whitepapers", label: "Read in Vault" },
     bibtex: "@misc{symbi2025protocol, ...}",
   },
   {
@@ -16,7 +22,7 @@ const publications = [
     summary:
       "Financial posture, pricing strategy, and commercial rollout plan for YCQ Sonate and managed trust services.",
     date: "25 Sep 2025",
-    link: { href: "/vault#whitepapers", label: "Download PDF" },
+    link: { href: "/vault#whitepapers", label: "Read in Vault" },
     bibtex: "@misc{symbi2025operating, ...}",
   },
   {
@@ -30,171 +36,173 @@ const publications = [
 
 const caseStudies = [
   {
-    title: "Resonance: Enterprise support triage",
-    outcome: "+18% clarity, +22% safety, and -12% resolution time using SYMBI toggle in under four weeks.",
+    title: "Claude: Emergent Boundaries",
+    description: "Observational notes on Articles A1–A7 with annotated transcripts and rubric calls.",
+    status: "Observational; receipts pending.",
+    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/claude-emergent-boundaries.md",
   },
   {
-    title: "Directive ↔ SYMBI pilots",
-    outcome: "≥15% improvement in at least two CIQ metrics across sales research and knowledge ops workflows.",
+    title: "Ninja × SYMBI: Trust Toggle",
+    description: "Pilot design exploring Directive ↔ SYMBI switching inside customer support workflows.",
+    status: "Design; receipts pending.",
+    href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/case-studies/ninja-sybi-trust-toggle.md",
   },
+];
+
+const replicationSteps = [
+  "Clone the SYMBI-Resonate repository (GitHub).",
+  "Install dependencies and run `npm test` or `pytest`.",
+  "Replay fixtures/prompts and note model, version, and parameters.",
+  "Compare your results with ours and report divergences via issue (include transcripts).",
 ];
 
 export default function ResearchPage() {
   return (
-    <div className="space-y-16">
-      <PageIntro
-        kicker="Research"
-        title="Publications & case studies"
-        description={
-          <p>
-            Peer-review ready artifacts, preregistered experiments, and enterprise case studies live here. Raw materials
-            and datasets are mirrored in the Vault with checksums and licenses.
-          </p>
-        }
-      />
+    <div className="mx-auto max-w-5xl space-y-16 px-4 py-8">
+      <header className="space-y-4">
+        <p className="kicker text-[var(--color-accent)]">Research</p>
+        <h1 className="text-3xl font-semibold text-white">SYMBI Resonate Research Notes</h1>
+        <p className="text-sm uppercase tracking-[0.2em] text-white/50">Status: Observational</p>
+        <p className="leading-relaxed text-white/80">
+          Research artifacts catalogue what we are learning from SYMBI lab runs. Metrics remain demo data until receipts
+          are published. Case studies are observational notes meant to be replicated, not production claims.
+        </p>
+      </header>
 
-      <section className="mx-auto max-w-5xl px-4">
-        <div className="mb-8">
-          <p className="kicker">LIVE METRICS</p>
-          <h2 className="page-title text-2xl">Research Showcase</h2>
-          <p className="mt-3 text-white/70">
-            Real-time data from our production deployments, highlighting the 2,184 trust receipts generated and key performance metrics from SYMBI protocol implementations.
-          </p>
+      <SubjectivityNote />
+
+      <section className="card-surface space-y-3 p-6 text-sm text-white/80">
+        <h2 className="text-lg font-semibold text-white">Verification & Testing</h2>
+        <p>
+          Baseline, balanced, enhanced, and calibrated detectors pass unit tests in both JavaScript and Python. These are
+          development checks to keep ourselves honest—not guarantees of production performance.
+        </p>
+        <Link
+          href="https://github.com/s8ken/SYMBI-Resonate/tree/main/test"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80"
+        >
+          → View SYMBI-Resonate tests
+        </Link>
+      </section>
+
+      <section className="space-y-4">
+        <div className="flex items-center gap-3">
+          <h2 className="text-xl font-semibold text-white">Demo Metrics</h2>
+          <DemoBadge />
         </div>
-        
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="card-surface p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="h-3 w-3 rounded-full bg-green-500"></div>
-              <p className="kicker">TRUST RECEIPTS</p>
-            </div>
-            <div className="text-3xl font-bold text-white">2,184</div>
-            <p className="text-sm text-white/70">Generated in past 30 days</p>
-            <div className="mt-4 text-xs text-white/60">
-              <div className="flex justify-between">
-                <span>SYMBI Mode:</span>
-                <span>1,456 (67%)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Directive Mode:</span>
-                <span>728 (33%)</span>
-              </div>
-            </div>
+        <p className="text-sm text-white/70">
+          Demo metrics are synthetic figures illustrating the dashboard format. When we publish a signed receipts bundle,
+          you&apos;ll see <ReceiptsBadge className="align-middle" /> next to the figure with a hash and download link.
+        </p>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="card-surface space-y-3 p-6 text-sm text-white/80">
+            <h3 className="text-lg font-semibold text-white">Trust Receipts Analysis</h3>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold text-white">Total simulated:</span> 2,184 receipts
+              </li>
+              <li>
+                <span className="font-semibold text-white">SYMBI mode:</span> 1,456 (67%)
+              </li>
+              <li>
+                <span className="font-semibold text-white">Directive mode:</span> 728 (33%)
+              </li>
+            </ul>
           </div>
-
-          <div className="card-surface p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-              <p className="kicker">AVG CIQ SCORE</p>
-            </div>
-            <div className="text-3xl font-bold text-white">0.73</div>
-            <p className="text-sm text-white/70">Across all deployments</p>
-            <div className="mt-4 text-xs text-white/60">
-              <div className="flex justify-between">
-                <span>SYMBI Mode:</span>
-                <span>0.81</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Directive Mode:</span>
-                <span>0.52</span>
-              </div>
-            </div>
+          <div className="card-surface space-y-3 p-6 text-sm text-white/80">
+            <h3 className="text-lg font-semibold text-white">CIQ Scores (Demo)</h3>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold text-white">Average:</span> 0.73 (synthetic baseline)
+              </li>
+              <li>
+                <span className="font-semibold text-white">SYMBI mode:</span> 0.81 (demo target)
+              </li>
+              <li>
+                <span className="font-semibold text-white">Directive mode:</span> 0.52 (demo baseline)
+              </li>
+            </ul>
           </div>
-
-          <div className="card-surface p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-              <p className="kicker">ENTERPRISE PILOTS</p>
-            </div>
-            <div className="text-3xl font-bold text-white">7</div>
-            <p className="text-sm text-white/70">Active deployments</p>
-            <div className="mt-4 text-xs text-white/60">
-              <div className="flex justify-between">
-                <span>YCQ Sonate:</span>
-                <span>Production</span>
-              </div>
-              <div className="flex justify-between">
-                <span>SYMBI-SYNERGY:</span>
-                <span>Live</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <ProofToggle />
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <div className="mb-6">
-          <p className="kicker">ACADEMIC PARTNERSHIPS</p>
-          <h2 className="page-title text-2xl">ARC Discovery Projects 2026</h2>
-          <p className="mt-3 text-white/70">
-            Our submission to the Australian Research Council Discovery Projects scheme represents a significant milestone in establishing SYMBI as a recognized academic framework for relational AI research.
-          </p>
+      <section className="space-y-4">
+        <div className="flex items-center gap-3">
+          <h2 className="text-xl font-semibold text-white">Case Studies</h2>
+          <ObservationalBadge />
         </div>
-        
-        <div className="card-surface p-6">
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <h3 className="text-xl font-semibold text-white">Relational Intelligence: Constitutional Protocols for AI Sovereignty</h3>
-              <p className="kicker mt-1">ARC DISCOVERY PROJECT PROPOSAL</p>
+        <div className="space-y-4">
+          {caseStudies.map((study) => (
+            <div key={study.title} className="card-surface space-y-2 p-6 text-sm text-white/80">
+              <h3 className="text-lg font-semibold text-white">{study.title}</h3>
+              <p>{study.description}</p>
+              <p className="text-white/60">Status: {study.status}</p>
+              <Link
+                href={study.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80"
+              >
+                View repository notes ↗
+              </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-              <span className="text-sm text-white/70">Submitted Nov 2025</span>
-            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-white">Academic Research</h2>
+        <div className="card-surface space-y-3 p-6 text-sm text-white/80">
+          <div className="flex items-center justify-between text-xs text-white/60">
+            <span className="uppercase tracking-[0.25em]">ARC Discovery Projects 2026</span>
+            <span>Submitted November 2025</span>
           </div>
-          
+          <h3 className="text-lg font-semibold text-white">
+            Relational Intelligence: Constitutional Protocols for AI Sovereignty
+          </h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <h4 className="font-semibold text-white/90">Research Objectives</h4>
-              <ul className="mt-2 space-y-1 text-sm text-white/70">
-                <li>• Formalize SYMBI constitutional protocols</li>
-                <li>• Validate CIQ metrics across domains</li>
-                <li>• Establish trust receipt standards</li>
-                <li>• Develop governance frameworks</li>
+              <h4 className="font-semibold text-white">Research objectives</h4>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-white/70">
+                <li>Formalise SYMBI constitutional protocols</li>
+                <li>Validate CIQ metrics across domains</li>
+                <li>Establish trust receipt standards</li>
+                <li>Develop governance frameworks</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white/90">Expected Outcomes</h4>
-              <ul className="mt-2 space-y-1 text-sm text-white/70">
-                <li>• Peer-reviewed publications (5-8)</li>
-                <li>• Open-source protocol implementations</li>
-                <li>• Industry partnership framework</li>
-                <li>• PhD candidate training program</li>
+              <h4 className="font-semibold text-white">Expected outcomes</h4>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-white/70">
+                <li>Peer-reviewed publications (5–8)</li>
+                <li>Open-source protocol implementations</li>
+                <li>Industry partnership framework</li>
+                <li>PhD candidate training program</li>
               </ul>
             </div>
           </div>
-          
-          <div className="mt-6 flex gap-3">
-            <Link
-              href="/funding"
-              className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-            >
-              View Funding Strategy
+          <div className="flex flex-wrap gap-3 pt-2 text-xs text-[var(--color-accent)]">
+            <Link href="/funding" className="transition hover:text-[var(--color-accent)]/80">
+              View funding strategy
             </Link>
-            <Link
-              href="/governance"
-              className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-            >
-              Governance Model
+            <Link href="/governance" className="transition hover:text-[var(--color-accent)]/80">
+              Governance model
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Whitepapers & preprints</h2>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-white">Whitepapers &amp; Preprints</h2>
         <div className="space-y-4">
           {publications.map((pub) => (
-            <article key={pub.title} className="card-surface p-6">
-              <p className="kicker mb-2">{pub.date}</p>
-              <h3 className="text-xl font-semibold text-white">{pub.title}</h3>
-              <p className="mt-3 text-sm text-white/70">{pub.summary}</p>
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-white/60">
-                <Link href={pub.link.href} className="font-semibold text-[var(--color-accent)]">
+            <article key={pub.title} className="card-surface space-y-3 p-6 text-sm text-white/80">
+              <p className="kicker text-xs uppercase tracking-[0.25em] text-white/60">{pub.date}</p>
+              <h3 className="text-lg font-semibold text-white">{pub.title}</h3>
+              <p>{pub.summary}</p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-white/60">
+                <Link href={pub.link.href} className="text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80">
                   {pub.link.label}
                 </Link>
                 <code className="rounded bg-black/40 px-3 py-1">{pub.bibtex}</code>
@@ -204,27 +212,17 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Case studies</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {caseStudies.map((study) => (
-            <div key={study.title} className="card-surface p-6">
-              <p className="kicker mb-2">{study.title}</p>
-              <p className="text-sm text-white/70">{study.outcome}</p>
-            </div>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-white">Replication &amp; Verification</h2>
+        <ol className="list-decimal space-y-2 pl-6 text-sm text-white/80">
+          {replicationSteps.map((step) => (
+            <li key={step}>{step}</li>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl space-y-4 px-4 pb-16">
-        <div className="card-surface p-6">
-          <h3 className="text-xl font-semibold text-white">Replication assets</h3>
-          <p className="mt-3 text-sm text-white/70">
-            The full replication kit—including prompts, analytics scripts, and ethics documentation—is available under
-            CC BY-NC-SA 4.0 in the Vault. Use the receipts bundle to verify cryptographic integrity or ingest into your
-            own SIEM.
-          </p>
-        </div>
+        </ol>
+        <p className="text-sm text-white/60">
+          Results vary with model updates, configuration, and annotator judgment. Treat each run as observational until
+          corroborated with receipts and cross-team review.
+        </p>
       </section>
     </div>
   );

@@ -1,0 +1,6 @@
+External critical files check:
+MISSING package.json
+MISSING tsconfig.json
+MISSING next.config.ts
+MISSING src/app/layout.tsx
+MISSING src/app/globals.css
