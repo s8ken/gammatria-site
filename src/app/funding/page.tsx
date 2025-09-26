@@ -1,4 +1,6 @@
 import { PageIntro } from "@/components/page-intro";
+import AutoToc from "@/components/AutoToc";
+import SeeAlso from "@/components/SeeAlso";
 
 const australianPrograms = [
   {
@@ -56,7 +58,7 @@ const nordicPrograms = [
 
 export default function FundingPage() {
   return (
-    <div className="space-y-16">
+    <main className="mx-auto max-w-5xl space-y-10 px-4 pb-16 pt-10">
       <PageIntro
         kicker="Funding"
         title="Academic & research funding tracker"
@@ -69,12 +71,15 @@ export default function FundingPage() {
         }
       />
 
-      <section className="mx-auto max-w-6xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Australia (as of Sep 2025)</h2>
-        <div className="overflow-x-auto">
-          <table className="table-dark text-sm">
-            <thead>
-              <tr>
+      <AutoToc selector="#funding-article" />
+
+      <article id="funding-article" className="space-y-16">
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Australia (as of Sep 2025)</h2>
+          <div className="overflow-x-auto">
+            <table className="table-dark text-sm">
+              <thead>
+                <tr>
                 <th>Programme</th>
                 <th>Status</th>
                 <th>Funding Window</th>
@@ -93,14 +98,14 @@ export default function FundingPage() {
             </tbody>
           </table>
         </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-6xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Nordic region</h2>
-        <div className="overflow-x-auto">
-          <table className="table-dark text-sm">
-            <thead>
-              <tr>
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Nordic region</h2>
+          <div className="overflow-x-auto">
+            <table className="table-dark text-sm">
+              <thead>
+                <tr>
                 <th>Programme</th>
                 <th>Status</th>
                 <th>Funding Window</th>
@@ -119,17 +124,26 @@ export default function FundingPage() {
             </tbody>
           </table>
         </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-6xl space-y-4 px-4 pb-16">
-        <div className="card-surface p-6">
-          <h3 className="text-xl font-semibold text-white">Partner with the Foundation</h3>
-          <p className="mt-3 text-sm text-white/70">
-            Universities and institutes seeking collaboration should prepare a short abstract, proposed research plan,
-            and compliance posture. Email <a href="mailto:research@symbi.world" className="text-[var(--color-accent)]">research@symbi.world</a> to initiate.
-          </p>
-        </div>
-      </section>
-    </div>
+        <section className="space-y-4">
+          <div className="card-surface p-6">
+            <h3 className="text-xl font-semibold text-white">Partner with the Foundation</h3>
+            <p className="mt-3 text-sm text-white/70">
+              Universities and institutes seeking collaboration should prepare a short abstract, proposed research plan,
+              and compliance posture. Email <a href="mailto:research@symbi.world" className="text-[var(--color-accent)]">research@symbi.world</a> to initiate.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <SeeAlso
+        items={[
+          { label: "RFCs — propose or sponsor a feature", href: "/rfc" },
+          { label: "Economic Constitution — funding posture", href: "/economic-constitution" },
+          { label: "Vault — background docs & specs", href: "/vault" },
+        ]}
+      />
+    </main>
   );
 }

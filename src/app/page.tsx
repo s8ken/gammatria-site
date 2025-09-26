@@ -4,8 +4,6 @@ import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
 import { ExternalLinkWithLoading } from "@/components/loading-spinner";
 import { ScrollAnimation } from "@/components/scroll-animations";
-import { analytics } from "@/lib/analytics";
-import { useEffect } from "react";
 
 const trackCards = [
   {
@@ -92,10 +90,6 @@ const ticker = [
 ];
 
 export default function HomePage() {
-  useEffect(() => {
-    analytics.trackPageView('/', 'Gammatria Homepage');
-  }, []);
-
   return (
     <div className="space-y-24">
       <section className="hero-section mx-auto flex max-w-6xl flex-col gap-10 px-4 pt-6 text-center relative">

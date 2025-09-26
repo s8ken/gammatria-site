@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { analytics } from "@/lib/analytics";
 
 const primaryNav = [
   { label: "Ecosystem", href: "/ecosystem" },

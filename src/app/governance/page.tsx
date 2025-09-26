@@ -1,4 +1,6 @@
 import { PageIntro } from "@/components/page-intro";
+import AutoToc from "@/components/AutoToc";
+import SeeAlso from "@/components/SeeAlso";
 
 const houses = [
   {
@@ -29,7 +31,7 @@ const safeguards = [
 
 export default function GovernancePage() {
   return (
-    <div className="space-y-16">
+    <main className="mx-auto max-w-5xl space-y-10 px-4 pb-16 pt-10">
       <PageIntro
         kicker="Governance"
         title="Bicameral governance & change control"
@@ -42,29 +44,32 @@ export default function GovernancePage() {
         }
       />
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Houses</h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {houses.map((house) => (
-            <div key={house.name} className="card-surface p-6">
-              <p className="kicker mb-2">{house.name}</p>
-              <p className="text-sm text-white/70">{house.role}</p>
-              <ul className="mt-4 space-y-2 text-xs text-white/60">
-                {house.details.map((detail) => (
-                  <li key={detail}>• {detail}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      <AutoToc selector="#governance-article" />
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4">
-        <h2 className="page-title text-2xl">Proposal flow</h2>
-        <div className="card-surface space-y-4 p-6">
-          <ol className="space-y-3 text-sm text-white/70">
-            <li>
-              <span className="font-semibold text-white">1. Draft & due diligence.</span> Submit proposal with impact memo,
+      <article id="governance-article" className="space-y-12">
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Houses</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {houses.map((house) => (
+              <div key={house.name} className="card-surface p-6">
+                <p className="kicker mb-2">{house.name}</p>
+                <p className="text-sm text-white/70">{house.role}</p>
+                <ul className="mt-4 space-y-2 text-xs text-white/60">
+                  {house.details.map((detail) => (
+                    <li key={detail}>• {detail}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Proposal flow</h2>
+          <div className="card-surface space-y-4 p-6">
+            <ol className="space-y-3 text-sm text-white/70">
+              <li>
+                <span className="font-semibold text-white">1. Draft & due diligence.</span> Submit proposal with impact memo,
               threat assessment, and required resource plan. Logged in transparent registry.
             </li>
             <li>
@@ -78,19 +83,33 @@ export default function GovernancePage() {
             <li>
               <span className="font-semibold text-white">4. Timelock & execution.</span> Approved proposals wait ≥72 hours before implementation. Emergency sunsets require
               supermajority from both houses.
-            </li>
-          </ol>
-        </div>
-      </section>
+              </li>
+            </ol>
+          </div>
+        </section>
 
-      <section className="mx-auto max-w-5xl space-y-6 px-4 pb-16">
-        <h2 className="page-title text-2xl">Safeguards</h2>
-        <ul className="space-y-3 text-sm text-white/70">
-          {safeguards.map((item) => (
-            <li key={item} className="card-surface px-5 py-4">{item}</li>
-          ))}
-        </ul>
-      </section>
-    </div>
+        <section className="space-y-6">
+          <h2 className="page-title text-2xl">Safeguards</h2>
+          <ul className="space-y-3 text-sm text-white/70">
+            {safeguards.map((item) => (
+              <li key={item} className="card-surface px-5 py-4">{item}</li>
+            ))}
+          </ul>
+        </section>
+      </article>
+
+      <SeeAlso
+        items={[
+          {
+            label: "Economic Constitution — issuance, decay, and bond policy",
+            href: "/economic-constitution",
+          },
+          { label: "RFCs — comment on live proposals", href: "/rfc" },
+          { label: "Sovereignty — NTGs & Integrity Bonds", href: "/sovereignty" },
+          { label: "Replication — reproduce results and export receipts", href: "/replication" },
+          { label: "Vault — canonical whitepapers & specs", href: "/vault" },
+        ]}
+      />
+    </main>
   );
 }
