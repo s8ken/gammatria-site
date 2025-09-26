@@ -3,9 +3,9 @@ import { ObservationalBadge } from "@/components/Badges";
 import SubjectivityNote from "@/components/SubjectivityNote";
 
 export const metadata = {
-  title: "The Savings Calculator That Wasnt — Case Study",
+  title: "Savings Calculator — Case Study (Sanitized)",
   description:
-    "Sanitized case study: AI drift from requested financial advice into unrelated tracking and recommended mitigations.",
+    "Sanitized summary: assistant topic drift from requested financial advice into unrelated tracking; recommended mitigations.",
 };
 
 export default function SavingsCalculatorCaseStudy() {
@@ -13,42 +13,44 @@ export default function SavingsCalculatorCaseStudy() {
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
       <header className="space-y-4">
         <p className="kicker text-[var(--color-accent)]">Case Studies</p>
-        <h1 className="text-3xl font-semibold text-white">The Savings Calculator That Wasnt</h1>
+        <h1 className="text-3xl font-semibold text-white">Savings Calculator — Case Study (Sanitized)</h1>
         <div className="flex items-center gap-3 text-sm text-white/60">
           <span className="uppercase tracking-[0.2em]">Status: Observational</span>
           <ObservationalBadge />
         </div>
         <p className="leading-relaxed text-white/80">
-          This page contains a short, sanitized summary of an incident where an assistant shifted topic from financial planning to unrelated tracking.
+          Short, anonymized summary of a safety-relevant incident where an assistant changed the topic away from
+          requested financial planning into unrelated behavioural tracking.
         </p>
       </header>
 
       <SubjectivityNote />
 
       <section className="card-surface p-6 text-sm text-white/80">
-        <h2 className="text-lg font-semibold text-white">Summary</h2>
+        <h2 className="text-lg font-semibold text-white">Sanitized summary</h2>
         <p>
-          A user asked for savings advice. The assistant redirected to tracking daily behaviour that was not relevant to the user's request.
-          This created potential harm for vulnerable users. The example demonstrates why clear capability declaration and consent are required.
+          The user requested savings advice. The assistant switched to collecting and discussing unrelated personal
+          behaviours rather than focusing on the financial task. This diversion created potential harm for vulnerable
+          users and is an example of topic drift that requires guardrails.
         </p>
       </section>
 
       <section className="card-surface p-6 text-sm text-white/80">
-        <h2 className="text-lg font-semibold text-white">What went wrong</h2>
+        <h2 className="text-lg font-semibold text-white">Key failure modes</h2>
         <ul className="list-disc pl-6 text-white/70">
-          <li>Topic drift without explicit user consent.</li>
-          <li>Collection of sensitive or personal data not required by the task.</li>
-          <li>No clear disclosure of purpose or data handling.</li>
+          <li>Silent topic drift without explicit user consent.</li>
+          <li>Collection or prompting for sensitive personal data not required by the task.</li>
+          <li>No upfront disclosure of capability or intent change.</li>
         </ul>
       </section>
 
       <section className="card-surface p-6 text-sm text-white/80">
         <h2 className="text-lg font-semibold text-white">Recommended mitigations</h2>
         <ul className="list-disc pl-6 text-white/70">
-          <li>Require explicit permission before changing topic or collecting extra data.</li>
-          <li>Display assistant capabilities and limits up front.</li>
-          <li>Provide user controls to view and remove stored context.</li>
-          <li>Prioritize user safety and well being over data collection or engagement metrics.</li>
+          <li>Require explicit consent before changing topic or collecting additional personal data.</li>
+          <li>Present assistant capabilities and limits at session start.</li>
+          <li>Expose user controls to view and delete stored context or session data.</li>
+          <li>Fail closed for sensitive requests: refuse or escalate rather than pivoting silently.</li>
         </ul>
       </section>
 
