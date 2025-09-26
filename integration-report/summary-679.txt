@@ -1,0 +1,5 @@
+Diff summary (dry-run rsync):
+- deletions: 142
+- new files: 0
+- changed files: 1
+- new directories: 0

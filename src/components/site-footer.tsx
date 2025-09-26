@@ -7,6 +7,15 @@ type FooterLink = {
 };
 
 const footerLinks: Record<string, FooterLink[]> = {
+  Research: [
+    { label: "SYMBI Resonate Lab", href: "/resonance" },
+    { label: "Case Studies", href: "/case-studies" },
+    {
+      label: "Verification Tests",
+      href: "https://github.com/s8ken/SYMBI-Resonate/tree/main/test",
+      external: true,
+    },
+  ],
   Foundation: [
     { label: "Mission", href: "/foundation" },
     { label: "Academic Partnerships", href: "/foundation#collaborate" },
