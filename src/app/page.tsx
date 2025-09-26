@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { PageIntro } from "@/components/page-intro";
 import { ExternalLinkWithLoading } from "@/components/loading-spinner";
 import { ScrollAnimation } from "@/components/scroll-animations";
 
@@ -111,27 +110,27 @@ export default function HomePage() {
             >
               Read the Framework
             </Link>
-            <ExternalLinkWithLoading
-              href="https://yseeku.com"
-              className="btn btn-secondary"
-              loadingMessage="Opening YCQ Sonate..."
-            >
-            YCQ Sonate Platform ↗
-          </ExternalLinkWithLoading>
-          <Link
-            href="/vault"
-            className="btn btn-secondary"
-          >
-            Open the Vault
-          </Link>
-          <Link
-            href="https://symbi.world"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary"
-          >
-            SYMBI
-          </Link>
+              <ExternalLinkWithLoading
+                href="https://yseeku.com"
+                className="btn btn-secondary"
+                loadingMessage="Opening YCQ Sonate..."
+              >
+                YCQ Sonate Platform ↗
+              </ExternalLinkWithLoading>
+              <Link
+                href="/vault"
+                className="btn btn-secondary"
+              >
+                Open the Vault
+              </Link>
+              <Link
+                href="https://symbi.world"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                SYMBI
+              </Link>
           </div>
         </div>
       </section>
