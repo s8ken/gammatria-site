@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const primaryNav = [
+  { label: "Get Started", href: "/getting-started" },
   { label: "Ecosystem", href: "/ecosystem" },
+  { label: "Showcase", href: "/showcase" },
+  { label: "API Docs", href: "/api-docs" },
   { label: "Framework", href: "/framework" },
   { label: "Ethics", href: "/ethics" },
   { label: "Governance", href: "/governance" },

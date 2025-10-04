@@ -3,18 +3,16 @@
 import { useEffect, useState } from 'react';
 
 export default function Consent() {
-  const [show, setShow] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false;
-    }
-
-    return !localStorage.getItem('symbi-consent');
-  });
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
       return;
     }
+
+    // Check if consent has been given
+    const hasConsent = localStorage.getItem('symbi-consent');
+    setShow(!hasConsent);
 
     if (!("gtag" in window)) {
       return;
