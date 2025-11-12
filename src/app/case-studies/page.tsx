@@ -5,7 +5,7 @@ import SubjectivityNote from "@/components/SubjectivityNote";
 
 export const metadata = {
   title: "Case Studies — SYMBI Resonate",
-  description: "Observational analyses and pilot designs from the SYMBI Resonate lab, with methods and disclaimers.",
+  description: "Observational analyses and experimental designs from the SYMBI Resonate lab, with methods and disclaimers.",
 };
 
 const studies = [
@@ -17,7 +17,7 @@ const studies = [
   },
   {
     title: "Ninja × SYMBI: Trust Toggle",
-    description: "Pilot design for flipping between Directive and SYMBI modes in support triage while logging trust receipts.",
+    description: "Experimental design for flipping between Directive and SYMBI modes in support triage while logging trust receipts.",
     status: "Design; receipts pending.",
     href: "/case-studies/agent-experience-account",
   },
@@ -66,7 +66,7 @@ export default function CaseStudiesPage() {
     <div className="mx-auto max-w-5xl space-y-16 px-4 py-8">
       <header className="space-y-4">
         <p className="kicker text-[var(--color-accent)]">Case Studies</p>
-        <h1 className="text-3xl font-semibold text-white">Observational Notes &amp; Pilot Designs</h1>
+        <h1 className="text-3xl font-semibold text-white">Observational Notes &amp; Experimental Designs</h1>
         <div className="flex items-center gap-3 text-sm text-white/60">
           <span className="uppercase tracking-[0.2em]">Status: Observational</span>
           <ObservationalBadge />

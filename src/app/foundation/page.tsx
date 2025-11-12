@@ -16,7 +16,7 @@ const board = [
 const collaboration = [
   "Visiting scholars: 3–12 month residencies focused on relational intelligence and auditability.",
   "Joint labs: co-develop trust metrics, selective memory infrastructure, or DAO governance experiments.",
-  "Replication partners: run /proof pilots with guidance, publish outcomes through the Foundation.",
+  "Replication partners: run /proof experiments with guidance, publish outcomes through the Foundation.",
 ];
 
 export default function FoundationPage() {
