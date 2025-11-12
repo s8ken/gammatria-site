@@ -143,7 +143,7 @@ export default function ResonancePage() {
             Research — demo metrics & verification notes
           </Link>
           <Link href="/case-studies" className="text-sm text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80">
-            Case Studies — observational write-ups & pilot designs
+            Case Studies — observational write-ups & experimental designs
           </Link>
           <Link href="/sovereignty" className="text-sm text-[var(--color-accent)] transition hover:text-[var(--color-accent)]/80">
             Sovereignty — earned voice (NTGs) & bonds

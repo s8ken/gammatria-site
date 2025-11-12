@@ -62,6 +62,10 @@ This site connects to and showcases:
 3. **SYMBI-Synergy** - Production trust receipt management
 4. **SYMBI-Resonate** - AI behavior assessment and CIQ scoring
 
+Explore additional resources:
+- **[symbi.world](https://symbi.world)** - SYMBI ecosystem overview and case studies
+- **[yseeku.com](https://yseeku.com)** - YCQ Sonate platform with integrated SYMBI capabilities
+
 ## 📚 Documentation Structure
 
 ```

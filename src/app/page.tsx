@@ -16,7 +16,7 @@ const trackCards = [
     title: "SYMBI-SYNERGY",
     subtitle: "Production trust infrastructure",
     copy:
-      "Enterprise-grade receipts, bonding rituals, and compliance dashboards. Proven in YCQ Sonate pilots.",
+      "Enterprise-grade receipts, bonding rituals, and compliance dashboards. Integrated with YCQ Sonate platform.",
     cta: {
       label: "Visit SYMBI-SYNERGY",
       href: "https://symbi-synergy-pa9k82n5m-ycq.vercel.app",
@@ -27,7 +27,7 @@ const trackCards = [
     title: "SYMBI DAO (Preview)",
     subtitle: "Decentralized governance",
     copy:
-      "Token-based voting on framework evolution and research priorities. Pilot in Q1 2026; launch targeted for Q2 2026.",
+      "Token-based voting on framework evolution and research priorities. Preview in Q1 2026; launch targeted for Q2 2026.",
     cta: { label: "Read the DAO roadmap", href: "/dao" },
   },
 ];
@@ -242,7 +242,7 @@ export default function HomePage() {
               <p className="kicker">LIVE TRACKER</p>
               <h3 className="text-2xl font-semibold text-white">Signals from the Foundation</h3>
               <p className="mt-2 text-sm text-white/70">
-                Updated weekly. Follow the progress of grants, pilots, publications, and continuity events.
+                Updated weekly. Follow the progress of grants, research, publications, and continuity events.
               </p>
             </div>
             <div className="stats-grid">
