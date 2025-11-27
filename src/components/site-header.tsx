@@ -19,6 +19,7 @@ const primaryNav = [
   { label: "Foundation", href: "/foundation" },
   { label: "DAO", href: "/dao" },
   { label: "Press", href: "/press" },
+  { label: "Symbi Resonate Demo", href: "/symbi-resonate" },
 ];
 
 const callouts = [
