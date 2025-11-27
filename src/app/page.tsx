@@ -124,6 +124,12 @@ export default function HomePage() {
                 Open the Vault
               </Link>
               <Link
+                href="/symbi-resonate"
+                className="btn btn-primary"
+              >
+                Resonate Demo
+              </Link>
+              <Link
                 href="https://symbi.world"
                 target="_blank"
                 rel="noopener noreferrer"

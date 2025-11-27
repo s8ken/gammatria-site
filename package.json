@@ -11,7 +11,10 @@
   "dependencies": {
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "lucide-react": "^0.469.0",
+    "recharts": "^2.12.7",
+    "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
