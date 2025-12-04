@@ -1,9 +1,6 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'SYMBI Resonate · Dashboard',
-  description: 'Metrics and indicators for the embedded demo',
-}
+"use client";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts'
+import { Brain } from 'lucide-react'
 
 export default function SymbiResonateDashboardPage() {
   const trendData = [
@@ -71,6 +68,3 @@ export default function SymbiResonateDashboardPage() {
     </div>
   )
 }
-"use client";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts'
-import { Brain } from 'lucide-react'

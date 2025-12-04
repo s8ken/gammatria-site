@@ -1,9 +1,5 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'SYMBI Resonate · SYMBI Assessment',
-  description: 'Framework-aligned evaluation flow',
-}
+"use client";
+import { Brain } from 'lucide-react'
 
 export default function SymbiResonateAssessmentPage() {
   return (
@@ -87,5 +83,3 @@ export default function SymbiResonateAssessmentPage() {
     </div>
   )
 }
-"use client";
-import { Brain } from 'lucide-react'
