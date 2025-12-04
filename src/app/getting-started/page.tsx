@@ -34,7 +34,7 @@ export default function GettingStartedPage() {
           Getting Started with SYMBI
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Choose your path to explore the SYMBI ecosystem. Whether you're a researcher, 
+          Choose your path to explore the SYMBI ecosystem. Whether you&#39;re a researcher, 
           developer, enterprise user, or contributor, we have the right starting point for you.
         </p>
       </div>
@@ -85,7 +85,7 @@ export default function GettingStartedPage() {
             <div className="text-4xl mr-4">🔬</div>
             <div>
               <h2 className="text-3xl font-bold text-blue-800">Researcher Path</h2>
-              <p className="text-blue-600">Explore SYMBI's academic foundations and research contributions</p>
+              <p className="text-blue-600">Explore SYMBI&#39;s academic foundations and research contributions</p>
             </div>
           </div>
 

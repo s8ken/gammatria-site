@@ -11,14 +11,14 @@ export default function BlogPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <article className="prose prose-sm sm:prose lg:prose-lg">
         <h1>🧪 SYMBI Resonate Lab: AI Evaluation Platform</h1>
-        <p>The industry's first production-ready platform for quantified, double-blind AI model evaluation.</p>
+        <p>The industry&#39;s first production-ready platform for quantified, double-blind AI model evaluation.</p>
 
         <h2>The Problem</h2>
         <ul>
-          <li>❌ "Should we use Claude or GPT-4?" → Answered with sales pitches</li>
-          <li>❌ "Is our AI model degrading?" → No way to measure</li>
-          <li>❌ "How do we prove EU AI Act compliance?" → Generic checklists</li>
-          <li>❌ "Which AI is best for our use case?" → Trial and error</li>
+          <li>❌ &quot;Should we use Claude or GPT-4?&quot; → Answered with sales pitches</li>
+          <li>❌ &quot;Is our AI model degrading?&quot; → No way to measure</li>
+          <li>❌ &quot;How do we prove EU AI Act compliance?&quot; → Generic checklists</li>
+          <li>❌ &quot;Which AI is best for our use case?&quot; → Trial and error</li>
         </ul>
 
         <h2>The Solution</h2>
@@ -65,7 +65,7 @@ export default function BlogPage() {
         <p>Research Foundation: 18 months of cross-platform study, 161,789 words analyzed, p&lt;0.001 statistical significance</p>
 
         <h2>Demo: Real Evaluation Results</h2>
-        <p>Task: "What is the meaning of consciousness?"</p>
+        <p>Task: &quot;What is the meaning of consciousness?&quot;</p>
         <p>Models: Claude 3 Sonnet vs GPT-4 Turbo</p>
         <p>Protocol: Double-blind (anonymous Slot A vs Slot B)</p>
         <pre className="font-mono text-sm overflow-x-auto">
@@ -220,6 +220,20 @@ Cryptographic     ✅               ⚠️      ⚠️       ⚠️         ❌`
           <li>Case Study 5: Cross-Platform Reproducibility (7-system validation)</li>
         </ul>
         <p>Peer-reviewable data: 161,789 words analyzed, p&lt;0.001 significance, reproducible methodology</p>
+
+        <h2>Resources</h2>
+        <ul>
+          <li>
+            <a href="/symbi-resonate-readme.pdf" target="_blank" rel="noopener noreferrer">SYMBI Resonate – GitHub README Section (PDF)</a>
+          </li>
+          <li>
+            <a href="/symbi-resonate-one-pager.pdf" target="_blank" rel="noopener noreferrer">SYMBI Resonate Lab – Sales One-Pager (PDF)</a>
+          </li>
+        </ul>
+        <div className="mt-6">
+          <h3>Interactive Radar Chart</h3>
+          <iframe src="/symbi-resonate-radar.html" className="w-full h-[520px] rounded-lg border" />
+        </div>
 
         <h2>Getting Started</h2>
         <h3>For Enterprises</h3>
