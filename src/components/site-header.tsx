@@ -7,6 +7,7 @@ const primaryNav = [
   { label: "Get Started", href: "/getting-started" },
   { label: "Ecosystem", href: "/ecosystem" },
   { label: "Showcase", href: "/showcase" },
+  { label: "Blog", href: "/blog" },
   { label: "API Docs", href: "/api-docs" },
   { label: "Framework", href: "/framework" },
   { label: "Ethics", href: "/ethics" },

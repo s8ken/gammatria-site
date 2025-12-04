@@ -34,7 +34,7 @@ export default function ShowcasePage() {
         <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           SYMBI Ecosystem Showcase
         </h1>
-        <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+        <p className="text-xl text-white/85 mb-6 max-w-3xl mx-auto">
           Experience the complete SYMBI platform through interactive demonstrations, 
           live environments, and real-world use cases.
         </p>
@@ -48,23 +48,23 @@ export default function ShowcasePage() {
 
       {/* Quick Navigation */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-        <Link href="#agentverse" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-blue-600">🤖 AgentVerse</h3>
-          <p className="text-sm text-gray-600">Multi-LLM Simulation</p>
+        <Link href="#agentverse" className="block p-4 card-surface rounded-lg transition-all">
+          <h3 className="font-semibold text-blue-400">🤖 AgentVerse</h3>
+          <p className="text-sm text-white/80">Multi-LLM Simulation</p>
         </Link>
-        <Link href="#tactical" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-green-600">⚡ Tactical Command</h3>
-          <p className="text-sm text-gray-600">Operations Dashboard</p>
+        <Link href="#tactical" className="block p-4 card-surface rounded-lg transition-all">
+          <h3 className="font-semibold text-green-400">⚡ Tactical Command</h3>
+          <p className="text-sm text-white/80">Operations Dashboard</p>
         </Link>
-        <Link href="#synergy" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-purple-600">🔐 SYMBI-Synergy</h3>
-          <p className="text-sm text-gray-600">Trust Infrastructure</p>
+        <Link href="#synergy" className="block p-4 card-surface rounded-lg transition-all">
+          <h3 className="font-semibold text-purple-400">🔐 SYMBI-Synergy</h3>
+          <p className="text-sm text-white/80">Trust Infrastructure</p>
         </Link>
       </div>
 
       {/* AgentVerse Showcase */}
       <section id="agentverse" className="mb-16">
-        <div className="bg-blue-50 rounded-lg p-8">
+        <div className="bg-blue-50 rounded-lg p-8 text-gray-800">
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-2xl mr-4">
               🤖
@@ -78,7 +78,7 @@ export default function ShowcasePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Live Demonstration</h3>
-              <div className="bg-white rounded-lg p-6 border">
+              <div className="bg-white text-gray-800 rounded-lg p-6 border">
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Agent Simulation Status</span>
@@ -102,9 +102,9 @@ export default function ShowcasePage() {
                     <span className="font-mono text-green-600">94.2%</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors">
+                <Link href="https://symbi-website-main-git-clean-master-ycq.vercel.app/" className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors text-center block">
                   Launch Interactive Demo
-                </button>
+                </Link>
               </div>
             </div>
             
@@ -149,7 +149,7 @@ export default function ShowcasePage() {
 
       {/* Tactical Command Interface Showcase */}
       <section id="tactical" className="mb-16">
-        <div className="bg-green-50 rounded-lg p-8">
+        <div className="bg-green-50 rounded-lg p-8 text-gray-800">
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white text-2xl mr-4">
               ⚡
@@ -163,7 +163,7 @@ export default function ShowcasePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Dashboard Preview</h3>
-              <div className="bg-white rounded-lg p-6 border">
+              <div className="bg-white text-gray-800 rounded-lg p-6 border">
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="text-center p-3 bg-gray-50 rounded">
                     <div className="text-2xl font-bold text-green-600">24</div>
@@ -183,28 +183,28 @@ export default function ShowcasePage() {
                     <span className="text-sm font-mono">420ms</span>
                   </div>
                 </div>
-                <button className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors">
-                  Open Live Dashboard
-                </button>
+                <Link href="https://symbi-website-main-git-clean-master-ycq.vercel.app/" className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors text-center block">
+                  Launch Interactive Demo
+                </Link>
               </div>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold mb-4">API Endpoints</h3>
               <div className="space-y-3 text-sm font-mono">
-                <div className="flex items-center p-2 bg-white rounded border">
+                <div className="flex items-center p-2 bg-white text-gray-800 rounded border">
                   <Badge variant="info" className="mr-2">GET</Badge>
                   <span>/api/agents</span>
                 </div>
-                <div className="flex items-center p-2 bg-white rounded border">
+                <div className="flex items-center p-2 bg-white text-gray-800 rounded border">
                   <Badge variant="success" className="mr-2">POST</Badge>
                   <span>/api/agents/register</span>
                 </div>
-                <div className="flex items-center p-2 bg-white rounded border">
+                <div className="flex items-center p-2 bg-white text-gray-800 rounded border">
                   <Badge variant="success" className="mr-2">POST</Badge>
                   <span>/api/rag/retrieve</span>
                 </div>
-                <div className="flex items-center p-2 bg-white rounded border">
+                <div className="flex items-center p-2 bg-white text-gray-800 rounded border">
                   <Badge variant="warning" className="mr-2">PUT</Badge>
                   <span>/api/exec/run</span>
                 </div>
@@ -226,7 +226,7 @@ export default function ShowcasePage() {
 
       {/* SYMBI-Synergy Showcase */}
       <section id="synergy" className="mb-16">
-        <div className="bg-purple-50 rounded-lg p-8">
+        <div className="bg-purple-50 rounded-lg p-8 text-gray-800">
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white text-2xl mr-4">
               🔐
@@ -256,27 +256,27 @@ export default function ShowcasePage() {
   "signature": "ed25519:valid"
 }`}</pre>
               </div>
-              <button className="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition-colors">
-                Verify Receipt Chain
-              </button>
+              <Link href="https://www.yseeku.com/trust-demo#verify" className="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition-colors text-center block">
+                Verify Receipt Chain (demo)
+              </Link>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold mb-4">Enterprise Features</h3>
               <div className="space-y-4">
-                <div className="p-4 bg-white rounded border">
+                <div className="p-4 bg-white text-gray-800 rounded border">
                   <h4 className="font-semibold text-purple-700 mb-2">🏢 SIEM Integration</h4>
                   <p className="text-sm text-gray-600">
                     Direct integration with enterprise security information and event management systems
                   </p>
                 </div>
-                <div className="p-4 bg-white rounded border">
+                <div className="p-4 bg-white text-gray-800 rounded border">
                   <h4 className="font-semibold text-purple-700 mb-2">📊 Compliance Dashboard</h4>
                   <p className="text-sm text-gray-600">
                     Real-time monitoring and reporting for regulatory compliance
                   </p>
                 </div>
-                <div className="p-4 bg-white rounded border">
+                <div className="p-4 bg-white text-gray-800 rounded border">
                   <h4 className="font-semibold text-purple-700 mb-2">🔗 Hash Chain Validation</h4>
                   <p className="text-sm text-gray-600">
                     Immutable audit trails with cryptographic verification
@@ -291,7 +291,7 @@ export default function ShowcasePage() {
       {/* Integration Workflow */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-center mb-8">End-to-End Integration</h2>
-        <div className="bg-gray-50 rounded-lg p-8">
+        <div className="bg-gray-50 rounded-lg p-8 text-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-2">
@@ -323,7 +323,7 @@ export default function ShowcasePage() {
       {/* Call to Action */}
       <section className="text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Experience SYMBI?</h2>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-white/85 mb-8 max-w-2xl mx-auto">
           Join the future of constitutional AI with our comprehensive platform for 
           trust, quality, and governance.
         </p>
