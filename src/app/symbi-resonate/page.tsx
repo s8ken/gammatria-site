@@ -1,10 +1,6 @@
-import { Metadata } from 'next'
-import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity } from 'lucide-react'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'SYMBI Resonate Demo',
-  description: 'Professional SYMBI Resonate demo experience with sophisticated frontend components and enterprise-grade analytics',
-}
+import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity } from 'lucide-react'
 
 export default function SymbiResonateLandingPage() {
   return (
