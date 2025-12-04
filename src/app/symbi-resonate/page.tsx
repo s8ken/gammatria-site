@@ -1,6 +1,6 @@
 'use client'
 
-import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity, ExternalLink, Play, Settings, Monitor } from 'lucide-react'
+import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity, ExternalLink, Play, Settings } from 'lucide-react'
 
 export default function SymbiResonateLandingPage() {
   const openDemoInNewTab = () => {
@@ -59,13 +59,7 @@ export default function SymbiResonateLandingPage() {
             <ExternalLink className="w-5 h-5 mr-2" />
             Open in New Tab
           </button>
-          <button
-            onClick={toggleFullscreen}
-            className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors"
-          >
-            <Monitor className="w-5 h-5 mr-2" />
-            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen Mode'}
-          </button>
+          
         </div>
 
         {/* Demo Features Grid */}
