@@ -256,7 +256,7 @@ export default function SymbiResonateLandingPage() {
               <p class="text-sm text-gray-400">Active Models</p>
             </div>
             <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div className="text-2xl font-bold text-green-400 mb-1">< 1.2ms</div>
+              <div className="text-2xl font-bold text-green-400 mb-1">&lt; 1.2ms</div>
               <p class="text-sm text-gray-400">Response Time</p>
             </div>
           </div>
