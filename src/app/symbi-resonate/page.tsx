@@ -110,7 +110,7 @@ export default function SymbiResonateLandingPage() {
         
         <div className="relative bg-gray-50" style={{ height: '900px' }}>
           <iframe
-            src="/resonate-demo/"
+            src="/resonate-demo/index.html"
             width="100%"
             height="100%"
             frameBorder="0"
@@ -118,6 +118,59 @@ export default function SymbiResonateLandingPage() {
             title="SYMBI Resonate Sophisticated Platform Demo"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
             loading="lazy"
+            onError={(e) => {
+              console.error('Iframe failed to load:', e);
+              const iframe = e.target as HTMLIFrameElement;
+              iframe.style.display = 'none';
+              
+              // Try loading the fallback demo
+              const fallbackIframe = document.createElement('iframe');
+              fallbackIframe.src = '/resonate-demo/fallback.html';
+              fallbackIframe.width = '100%';
+              fallbackIframe.height = '100%';
+              fallbackIframe.frameBorder = '0';
+              fallbackIframe.className = 'w-full h-full bg-white';
+              fallbackIframe.title = 'SYMBI Resonate Fallback Demo';
+              fallbackIframe.sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups allow-modals';
+              
+              fallbackIframe.onload = () => {
+                console.log('Fallback demo loaded successfully');
+              };
+              
+              fallbackIframe.onerror = () => {
+                console.error('Fallback demo also failed to load');
+                // Show final error message
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'absolute inset-0 flex items-center justify-center bg-red-50 border border-red-200 rounded-lg';
+                errorMsg.innerHTML = `
+                  <div class="text-center p-8">
+                    <div class="text-red-600 mb-4">
+                      <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-red-800 mb-2">Demo Loading Error</h3>
+                    <p class="text-red-600 mb-4">The SYMBI Resonate demo failed to load properly.</p>
+                    <div class="space-y-2 text-sm text-red-500">
+                      <p>• Check browser console for detailed error messages</p>
+                      <p>• Verify demo files are properly built and deployed</p>
+                      <p>• Try refreshing the page</p>
+                    </div>
+                    <div class="mt-4 space-x-4">
+                      <a href="/resonate-demo/index.html" target="_blank" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                        Open Main Demo
+                      </a>
+                      <a href="/resonate-demo/fallback.html" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+                        Open Fallback Demo
+                      </a>
+                    </div>
+                  </div>
+                `;
+                iframe.parentNode?.appendChild(errorMsg);
+              };
+              
+              iframe.parentNode?.appendChild(fallbackIframe);
+            }}
           />
         </div>
       </div>
