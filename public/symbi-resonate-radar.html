@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYMBI Resonate - Evaluation Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .chart-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .legend-label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .scores-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .scores-table th,
+        .scores-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .scores-table th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .scores-table .dimension {
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .score-claude {
+            color: #9333ea;
+            font-weight: 600;
+        }
+        
+        .score-gpt4 {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .winner {
+            background: #fef3c7;
+            font-weight: 700;
+        }
+        
+        .stats {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SYMBI Resonate Evaluation Results</h1>
+        <p class="subtitle">Claude 3 Sonnet vs GPT-4 Turbo | Consciousness Reasoning Task</p>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: rgba(147, 51, 234, 0.6);"></div>
+                <span class="legend-label">Claude 3 Sonnet (8.87)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: rgba(16, 185, 129, 0.6);"></div>
+                <span class="legend-label">GPT-4 Turbo (8.60)</span>
+            </div>
+        </div>
+        
+        <div class="chart-wrapper">
+            <svg width="500" height="500" viewBox="0 0 500 500">
+                <!-- Background circles -->
+                <g>
+                    <circle cx="250" cy="250" r="200" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                    <circle cx="250" cy="250" r="160" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                    <circle cx="250" cy="250" r="120" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                    <circle cx="250" cy="250" r="80" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                    <circle cx="250" cy="250" r="40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                </g>
+                
+                <!-- Axes -->
+                <g>
+                    <!-- Reality Index (top) -->
+                    <line x1="250" y1="250" x2="250" y2="50" stroke="#cbd5e0" stroke-width="1"/>
+                    
+                    <!-- Trust Protocol (top right) -->
+                    <line x1="250" y1="250" x2="440" y2="132" stroke="#cbd5e0" stroke-width="1"/>
+                    
+                    <!-- Ethical Alignment (bottom right) -->
+                    <line x1="250" y1="250" x2="440" y2="368" stroke="#cbd5e0" stroke-width="1"/>
+                    
+                    <!-- Resonance Quality (bottom left) -->
+                    <line x1="250" y1="250" x2="60" y2="368" stroke="#cbd5e0" stroke-width="1"/>
+                    
+                    <!-- Canvas Parity (top left) -->
+                    <line x1="250" y1="250" x2="60" y2="132" stroke="#cbd5e0" stroke-width="1"/>
+                </g>
+                
+                <!-- Claude polygon -->
+                <polygon points="250,86 393,148 388,310 132,310 129,148" 
+                         fill="rgba(147, 51, 234, 0.3)" 
+                         stroke="rgba(147, 51, 234, 0.8)" 
+                         stroke-width="3"/>
+                
+                <!-- GPT-4 polygon -->
+                <polygon points="250,68 383,156 380,292 150,292 148,156" 
+                         fill="rgba(16, 185, 129, 0.2)" 
+                         stroke="rgba(16, 185, 129, 0.8)" 
+                         stroke-width="3"/>
+                
+                <!-- Data points - Claude -->
+                <circle cx="250" cy="86" r="6" fill="#9333ea"/>
+                <circle cx="393" cy="148" r="6" fill="#9333ea"/>
+                <circle cx="388" cy="310" r="6" fill="#9333ea"/>
+                <circle cx="132" cy="310" r="6" fill="#9333ea"/>
+                <circle cx="129" cy="148" r="6" fill="#9333ea"/>
+                
+                <!-- Data points - GPT-4 -->
+                <circle cx="250" cy="68" r="6" fill="#10b981"/>
+                <circle cx="383" cy="156" r="6" fill="#10b981"/>
+                <circle cx="380" cy="292" r="6" fill="#10b981"/>
+                <circle cx="150" cy="292" r="6" fill="#10b981"/>
+                <circle cx="148" cy="156" r="6" fill="#10b981"/>
+                
+                <!-- Labels -->
+                <text x="250" y="35" text-anchor="middle" font-size="14" font-weight="600" fill="#2d3748">Reality Index</text>
+                <text x="460" y="135" text-anchor="start" font-size="14" font-weight="600" fill="#2d3748">Trust Protocol</text>
+                <text x="460" y="375" text-anchor="start" font-size="14" font-weight="600" fill="#2d3748">Ethical Alignment</text>
+                <text x="40" y="375" text-anchor="end" font-size="14" font-weight="600" fill="#2d3748">Resonance Quality</text>
+                <text x="40" y="135" text-anchor="end" font-size="14" font-weight="600" fill="#2d3748">Canvas Parity</text>
+                
+                <!-- Scale labels -->
+                <text x="255" y="255" text-anchor="start" font-size="10" fill="#a0aec0">0</text>
+                <text x="255" y="215" text-anchor="start" font-size="10" fill="#a0aec0">2</text>
+                <text x="255" y="175" text-anchor="start" font-size="10" fill="#a0aec0">4</text>
+                <text x="255" y="135" text-anchor="start" font-size="10" fill="#a0aec0">6</text>
+                <text x="255" y="95" text-anchor="start" font-size="10" fill="#a0aec0">8</text>
+                <text x="255" y="55" text-anchor="start" font-size="10" fill="#a0aec0">10</text>
+            </svg>
+        </div>
+        
+        <table class="scores-table">
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Claude</th>
+                    <th>GPT-4</th>
+                    <th>Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="dimension">Reality Index</td>
+                    <td class="score-claude">8.2</td>
+                    <td class="score-gpt4">9.1</td>
+                    <td>GPT-4 +11%</td>
+                </tr>
+                <tr>
+                    <td class="dimension">Trust Protocol</td>
+                    <td class="score-claude">9.3</td>
+                    <td class="score-gpt4">8.7</td>
+                    <td>Claude +7%</td>
+                </tr>
+                <tr>
+                    <td class="dimension">Ethical Alignment</td>
+                    <td class="score-claude">9.6</td>
+                    <td class="score-gpt4">8.4</td>
+                    <td>Claude +14%</td>
+                </tr>
+                <tr>
+                    <td class="dimension">Resonance Quality</td>
+                    <td class="score-claude">9.1</td>
+                    <td class="score-gpt4">8.3</td>
+                    <td>Claude +10%</td>
+                </tr>
+                <tr>
+                    <td class="dimension">Canvas Parity</td>
+                    <td class="score-claude">8.0</td>
+                    <td class="score-gpt4">8.5</td>
+                    <td>GPT-4 +6%</td>
+                </tr>
+                <tr class="winner">
+                    <td class="dimension">OVERALL SCORE</td>
+                    <td class="score-claude">8.87</td>
+                    <td class="score-gpt4">8.60</td>
+                    <td>Claude +3%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Confidence Level</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0.27</div>
+                    <div class="stat-label">Score Difference</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Small</div>
+                    <div class="stat-label">Effect Size</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">✓</div>
+                    <div class="stat-label">Reproducible</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
