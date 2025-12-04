@@ -1,8 +1,44 @@
 'use client'
 
 import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function SymbiResonateLandingPage() {
+  const [demoStatus, setDemoStatus] = useState('loading')
+  const [currentDemo, setCurrentDemo] = useState('main')
+
+  useEffect(() => {
+    // Test if main demo loads
+    const testMainDemo = async () => {
+      try {
+        const response = await fetch('/resonate-demo/index.html')
+        if (response.ok) {
+          console.log('✅ Main demo file accessible')
+          setDemoStatus('main-available')
+        } else {
+          console.log('❌ Main demo file not accessible:', response.status)
+          setDemoStatus('main-failed')
+        }
+      } catch (error) {
+        console.log('❌ Main demo file error:', error)
+        setDemoStatus('main-failed')
+      }
+    }
+
+    testMainDemo()
+  }, [])
+
+  const handleIframeError = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
+    console.log('🚨 Iframe error detected, switching to fallback...')
+    setDemoStatus('fallback')
+    setCurrentDemo('interactive')
+  }
+
+  const handleIframeLoad = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
+    console.log('✅ Iframe loaded successfully')
+    setDemoStatus('loaded')
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Hero Section */}
@@ -37,6 +73,16 @@ export default function SymbiResonateLandingPage() {
         </div>
       </div>
 
+      {/* Debug Status */}
+      <div className="mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <h3 className="font-semibold text-yellow-800 mb-2">🔍 Demo Status Debug</h3>
+        <div className="text-sm text-yellow-700">
+          <p>Current Status: <span className="font-mono">{demoStatus}</span></p>
+          <p>Current Demo: <span className="font-mono">{currentDemo}</span></p>
+          <p>Expected Interactive Elements: Consciousness Detection, Real-time Analytics, Multi-Agent Lab, SYMBI Framework</p>
+        </div>
+      </div>
+
       {/* Feature Overview */}
       <div className="mb-12">
         <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
@@ -47,208 +93,139 @@ export default function SymbiResonateLandingPage() {
               advanced navigation, and enterprise-level analytics capabilities.
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-blue-600 mb-3">
-                <BarChart3 className="h-8 w-8" />
-              </div>
-              <div className="font-bold text-gray-900 mb-2">50+ Components</div>
-              <div className="text-sm text-gray-600">Professional shadcn/ui library with advanced styling</div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-green-600 mb-3">
-                <Activity className="h-8 w-8" />
-              </div>
-              <div className="font-bold text-gray-900 mb-2">Interactive Charts</div>
-              <div className="text-sm text-gray-600">Advanced Recharts integration with real-time data</div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-purple-600 mb-3">
-                <Users className="h-8 w-8" />
-              </div>
-              <div className="font-bold text-gray-900 mb-2">Advanced Navigation</div>
-              <div className="text-sm text-gray-600">Collapsible sidebar with organized menu groups</div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-orange-600 mb-3">
-                <Beaker className="h-8 w-8" />
-              </div>
-              <div className="font-bold text-gray-900 mb-2">Experiment Management</div>
-              <div className="text-sm text-gray-600">Comprehensive tracking with dual-view modes</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Professional Demo iframe */}
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                <Brain className="h-6 w-6" />
-                SYMBI Resonate Platform Demo
-              </h2>
-              <p className="text-blue-100 text-base mt-1">
-                Interactive demonstration of enterprise AI analytics and assessment capabilities
-              </p>
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-100 text-sm font-medium">Live Demo</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="relative bg-gray-50" style={{ height: '900px' }}>
-          <iframe
-            src="/resonate-demo/index.html"
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            className="w-full h-full bg-white"
-            title="SYMBI Resonate Sophisticated Platform Demo"
-            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-            loading="lazy"
-            onError={(e) => {
-              console.error('Iframe failed to load:', e);
-              const iframe = e.target as HTMLIFrameElement;
-              iframe.style.display = 'none';
-              
-              // Try loading the fallback demo
-              const fallbackIframe = document.createElement('iframe');
-              fallbackIframe.src = '/resonate-demo/fallback.html';
-              fallbackIframe.width = '100%';
-              fallbackIframe.height = '100%';
-              fallbackIframe.frameBorder = '0';
-              fallbackIframe.className = 'w-full h-full bg-white';
-              fallbackIframe.title = 'SYMBI Resonate Fallback Demo';
-              fallbackIframe.sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups allow-modals';
-              
-              fallbackIframe.onload = () => {
-                console.log('Fallback demo loaded successfully');
-              };
-              
-              fallbackIframe.onerror = () => {
-                console.error('Fallback demo also failed to load');
-                // Show final error message
-                const errorMsg = document.createElement('div');
-                errorMsg.className = 'absolute inset-0 flex items-center justify-center bg-red-50 border border-red-200 rounded-lg';
-                errorMsg.innerHTML = `
-                  <div class="text-center p-8">
-                    <div class="text-red-600 mb-4">
-                      <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-red-800 mb-2">Demo Loading Error</h3>
-                    <p class="text-red-600 mb-4">The SYMBI Resonate demo failed to load properly.</p>
-                    <div class="space-y-2 text-sm text-red-500">
-                      <p>• Check browser console for detailed error messages</p>
-                      <p>• Verify demo files are properly built and deployed</p>
-                      <p>• Try refreshing the page</p>
-                    </div>
-                    <div class="mt-4 space-x-4">
-                      <a href="/resonate-demo/index.html" target="_blank" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
-                        Open Main Demo
-                      </a>
-                      <a href="/resonate-demo/fallback.html" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
-                        Open Fallback Demo
-                      </a>
-                    </div>
+          {/* Demo Instructions */}
+          <div className="bg-blue-50 border-b border-blue-200 px-8 py-4">
+            <div className="flex items-start gap-3">
+              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-white text-xs font-bold">i</span>
+              </div>
+              <div className="text-blue-800">
+                <h3 className="font-semibold mb-2">Interactive Demo Guide</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <p className="font-medium mb-1">🧠 Consciousness Detection</p>
+                    <p className="text-blue-700">Monitor AI models for emergent consciousness-like behaviors</p>
                   </div>
-                `;
-                iframe.parentNode?.appendChild(errorMsg);
-              };
-              
-              iframe.parentNode?.appendChild(fallbackIframe);
-            }}
-          />
+                  <div>
+                    <p className="font-medium mb-1">📊 Real-time Analytics</p>
+                    <p className="text-blue-700">Live charts showing AI performance metrics and trends</p>
+                  </div>
+                  <div>
+                    <p className="font-medium mb-1">🧪 Multi-Agent Lab</p>
+                    <p className="text-blue-700">Experiment with different AI models and configurations</p>
+                  </div>
+                  <div>
+                    <p className="font-medium mb-1">📈 SYMBI Framework</p>
+                    <p className="text-blue-700">5-dimensional evaluation: Reality, Trust, Ethics, Resonance, Canvas</p>
+                  </div>
+                </div>
+                <p className="text-blue-600 text-xs mt-3">
+                  💡 <strong>Tip:</strong> The demo below contains interactive charts, buttons, and controls. 
+                  Look for clickable elements, hover effects, and dynamic data visualizations.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative bg-gray-50" style={{ height: '900px' }}>
+            {demoStatus === 'loading' && (
+              <div className="absolute inset-0 flex items-center justify-center bg-blue-50">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                  <p className="text-blue-600">Loading demo...</p>
+                </div>
+              </div>
+            )}
+            
+            {demoStatus === 'main-available' && currentDemo === 'main' && (
+              <iframe
+                src="/resonate-demo/index.html"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="w-full h-full bg-white"
+                title="SYMBI Resonate Sophisticated Platform Demo"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                loading="lazy"
+                onLoad={handleIframeLoad}
+                onError={handleIframeError}
+              />
+            )}
+            
+            {(demoStatus === 'main-failed' || currentDemo === 'interactive') && (
+              <iframe
+                src="/resonate-demo/interactive-fallback.html"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="w-full h-full bg-white"
+                title="SYMBI Resonate Interactive Fallback Demo"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+              />
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Key Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <BarChart3 className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-blue-900">Advanced Analytics</h3>
+      {/* Feature Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Brain className="h-6 w-6 text-blue-600" />
           </div>
-          <p className="text-blue-800 text-sm leading-relaxed">
-            Real-time metrics, interactive charts, and comprehensive data visualization 
-            with professional-grade statistical analysis capabilities.
-          </p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Consciousness Detection</h3>
+          <p className="text-gray-600 text-sm">Advanced algorithms monitor AI models for emergent consciousness-like behaviors and self-awareness patterns.</p>
         </div>
 
-        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
-              <Beaker className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-green-900">Experiment Orchestration</h3>
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <BarChart3 className="h-6 w-6 text-purple-600" />
           </div>
-          <p className="text-green-800 text-sm leading-relaxed">
-            Double-blind testing workflows, multi-agent coordination, and automated 
-            statistical analysis with confidence intervals and significance testing.
-          </p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-time Analytics</h3>
+          <p className="text-gray-600 text-sm">Live monitoring dashboards with interactive charts showing AI performance metrics and emergence indicators.</p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
-              <Shield className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-purple-900">SYMBI Framework</h3>
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <Beaker className="h-6 w-6 text-green-600" />
           </div>
-          <p className="text-purple-800 text-sm leading-relaxed">
-            Five-dimensional evaluation system: Reality Index, Trust Protocol, 
-            Ethical Alignment, Resonance Quality, and Canvas Parity scoring.
-          </p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Multi-Agent Lab</h3>
+          <p className="text-gray-600 text-sm">Experiment with different AI models and configurations in controlled environments with comprehensive tracking.</p>
         </div>
 
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-              <Zap className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-orange-900">Enterprise Components</h3>
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <Shield className="h-6 w-6 text-orange-600" />
           </div>
-          <p className="text-orange-800 text-sm leading-relaxed">
-            50+ professional shadcn/ui components with accessibility features, 
-            dark mode support, and responsive design optimization.
-          </p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">SYMBI Framework</h3>
+          <p className="text-gray-600 text-sm">Five-dimensional evaluation system: Reality, Trust, Ethics, Resonance, and Canvas assessment protocols.</p>
         </div>
+      </div>
 
-        <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
-              <Activity className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-teal-900">Real-time Monitoring</h3>
-          </div>
-          <p className="text-teal-800 text-sm leading-relaxed">
-            Live experiment tracking, performance metrics, and activity feeds 
-            with automated alerts and status notifications.
-          </p>
-        </div>
-
-        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl border border-indigo-200">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
-              <Award className="h-5 w-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-indigo-900">Research Ready</h3>
-          </div>
-          <p className="text-indigo-800 text-sm leading-relaxed">
-            Academic-grade methodology, peer-reviewable datasets, and comprehensive 
-            export capabilities for scholarly research and publication.
-          </p>
+      {/* Call to Action */}
+      <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+        <h2 className="text-3xl font-bold mb-4">Ready to Explore?</h2>
+        <p className="text-lg mb-6 opacity-90">
+          Experience the full SYMBI Resonate platform with advanced AI analytics and consciousness detection capabilities.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a 
+            href="https://github.com/s8ken/SYMBI-Resonate" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            <Users className="h-5 w-5 mr-2" />
+            View on GitHub
+          </a>
+          <a 
+            href="/demo-debug" 
+            className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors"
+          >
+            <Activity className="h-5 w-5 mr-2" />
+            Debug Demo
+          </a>
         </div>
       </div>
     </div>
