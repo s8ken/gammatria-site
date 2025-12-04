@@ -35,9 +35,9 @@ const callouts = [
     external: true,
   },
   {
-    label: "/proof",
-    href: "https://symbi.world/proof",
-    external: true,
+    label: "/proof Demo",
+    href: "/symbi-resonate",
+    external: false,
   },
 ];
 
