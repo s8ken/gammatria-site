@@ -1,49 +1,8 @@
 'use client'
 
 import { Brain, BarChart3, Beaker, Shield, Zap, Users, Award, TrendingUp, Activity, ExternalLink, Play, Settings, Monitor } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 export default function SymbiResonateLandingPage() {
-  const [demoStatus, setDemoStatus] = useState('loading')
-  const [currentDemo, setCurrentDemo] = useState('main')
-  const [isFullscreen, setIsFullscreen] = useState(false)
-
-  useEffect(() => {
-    // Test if main demo loads
-    const testMainDemo = async () => {
-      try {
-        const response = await fetch('/resonate-demo/index.html')
-        if (response.ok) {
-          console.log('✅ Main demo file accessible')
-          setDemoStatus('main-available')
-        } else {
-          console.log('❌ Main demo file not accessible:', response.status)
-          setDemoStatus('main-failed')
-        }
-      } catch (error) {
-        console.log('❌ Main demo file error:', error)
-        setDemoStatus('main-failed')
-      }
-    }
-
-    testMainDemo()
-  }, [])
-
-  const handleIframeError = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
-    console.log('🚨 Iframe error detected, switching to fallback...')
-    setDemoStatus('fallback')
-    setCurrentDemo('interactive')
-  }
-
-  const handleIframeLoad = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
-    console.log('✅ Iframe loaded successfully')
-    setDemoStatus('loaded')
-  }
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen)
-  }
-
   const openDemoInNewTab = () => {
     window.open('/resonate-demo/index.html', '_blank', 'noopener,noreferrer')
   }
@@ -135,73 +94,79 @@ export default function SymbiResonateLandingPage() {
       </div>
 
       {/* Demo Container */}
-      <div className={`mb-12 ${isFullscreen ? 'fixed inset-0 z-50 bg-white' : 'bg-gray-100 rounded-2xl overflow-hidden'}`}>
-        {!isFullscreen && (
-          <div className="bg-gray-800 text-white p-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              </div>
-              <span className="text-sm font-medium">SYMBI Resonate Demo</span>
+      <div className="mb-12 bg-gray-100 rounded-2xl overflow-hidden shadow-2xl">
+        <div className="bg-gray-800 text-white p-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={openDemoInNewTab}
-                className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors"
-              >
-                <ExternalLink className="w-4 h-4 inline mr-1" />
-                Open New
-              </button>
-              <button
-                onClick={toggleFullscreen}
-                className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors"
-              >
-                <Monitor className="w-4 h-4 inline mr-1" />
-                Fullscreen
-              </button>
-            </div>
+            <span className="text-sm font-medium">SYMBI Resonate Enterprise Platform</span>
+            <span className="px-2 py-1 bg-green-600 text-xs rounded-full">LIVE</span>
           </div>
-        )}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={openDemoInNewTab}
+              className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors flex items-center gap-1"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Open New
+            </button>
+          </div>
+        </div>
         
-        <div className={isFullscreen ? 'h-screen' : 'relative'} style={{ height: isFullscreen ? '100vh' : '900px' }}>
-          {demoStatus === 'loading' && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Loading SYMBI Resonate Platform</h3>
-                <p className="text-gray-600">Initializing advanced AI consciousness detection systems...</p>
-              </div>
-            </div>
-          )}
-          
-          {demoStatus === 'main-available' && currentDemo === 'main' && (
-            <iframe
-              src="/resonate-demo/index.html"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              className="w-full h-full bg-white"
-              title="SYMBI Resonate Enterprise Platform Demo"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-              loading="lazy"
-              onLoad={handleIframeLoad}
-              onError={handleIframeError}
-            />
-          )}
-          
-          {(demoStatus === 'main-failed' || currentDemo === 'interactive') && (
-            <iframe
-              src="/resonate-demo/interactive-fallback.html"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              className="w-full h-full bg-white"
-              title="SYMBI Resonate Interactive Fallback Demo"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-            />
-          )}
+        <div className="relative" style={{ height: '900px' }}>
+          <iframe
+            src="/resonate-demo/index.html"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            className="w-full h-full bg-white"
+            title="SYMBI Resonate Enterprise Platform Demo"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      {/* Fallback Section - Direct Access */}
+      <div className="mb-16 bg-blue-50 border-2 border-blue-200 rounded-2xl p-8">
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Direct Demo Access</h3>
+          <p className="text-gray-600 mb-6">
+            If the demo above doesn't load properly, you can access it directly using the options below:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <button
+              onClick={openDemoInNewTab}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              <Play className="w-5 h-5 mr-2" />
+              Full Demo
+            </button>
+            <a
+              href="/resonate-demo/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              Main Demo
+            </a>
+            <a
+              href="/symbi-demo.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-white text-purple-600 border-2 border-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              Backup Demo
+            </a>
+          </div>
+          <p className="text-sm text-gray-500 mt-4">
+            The backup demo is a simplified version that should load in all environments.
+          </p>
         </div>
       </div>
 
