@@ -25,7 +25,7 @@ export default function ResonanceMetricsPage() {
           
           <div className="bg-black/20 p-8 rounded-lg text-center border border-white/5">
             <div className="text-3xl font-mono text-white mb-4">
-              R_m = (1 + δ_entropy) / ((V_align * w1) + (C_hist * w2) + (S_match * w3))
+              R_m = ((V_align * w1) + (C_hist * w2) + (S_match * w3)) / (1 + δ_entropy)
             </div>
             <p className="text-sm text-white/50">Note: Components are weighted and normalized to produce the final resonance score.</p>
           </div>
@@ -95,8 +95,10 @@ export default function ResonanceMetricsPage() {
     w1, w2, w3 = 0.5, 0.3, 0.2
     
     # 4. Compute final R_m score
+    # Note: High entropy reduces resonance, so we divide by (1 + entropy)
+    # or subtract entropy penalty. The formula below maximizes alignment.
     denominator = (V_align * w1) + (C_hist * w2) + (S_match * w3)
-    R_m = (1 + delta_entropy) / denominator if denominator != 0 else 0
+    R_m = denominator / (1 + delta_entropy) 
     
     return R_m`}
             </pre>

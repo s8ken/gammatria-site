@@ -40,6 +40,10 @@ export default function ExperimentsPage() {
                 standard, transactional interactions (low-resonance). A valid metric should show a 
                 statistically significant separation between these groups.
               </p>
+              <p className="text-white/70">
+                Specifically, we analyze high-resonance conversations like the <strong>"AI Interaction Case Study Review - Claude"</strong> 
+                thread to validate that LVS effectively achieves its intended steering coordinates.
+              </p>
             </div>
           </div>
         </div>

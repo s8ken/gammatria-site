@@ -32,6 +32,9 @@ export default function LVSPage() {
                 high-dimensional vectors in the LLM's activation space. LVS maps these conceptual 
                 narratives to specific coordinates that steer the model's internal state.
               </p>
+              <div className="bg-black/20 p-4 rounded text-xs font-mono text-white/60">
+                Valign = cosine_similarity(embed(user_input), embed(ai_response))
+              </div>
             </div>
 
             <div className="space-y-3">
