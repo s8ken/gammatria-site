@@ -8,10 +8,10 @@ function Badge({ variant, children, className = "" }: {
   className?: string 
 }) {
   const variantStyles = {
-    success: "bg-green-100 text-green-800 border-green-200",
-    info: "bg-blue-100 text-blue-800 border-blue-200", 
-    warning: "bg-yellow-100 text-yellow-800 border-yellow-200",
-    secondary: "bg-gray-100 text-gray-800 border-gray-200"
+    success: "bg-green-100 text-green-900 border-green-200",
+    info: "bg-blue-100 text-blue-900 border-blue-200", 
+    warning: "bg-yellow-100 text-yellow-900 border-yellow-200",
+    secondary: "bg-gray-100 text-gray-900 border-gray-200"
   }
   
   return (
@@ -34,7 +34,7 @@ export default function ShowcasePage() {
         <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           SYMBI Ecosystem Showcase
         </h1>
-        <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-700 mb-6 max-w-3xl mx-auto">
           Experience the complete SYMBI platform through interactive demonstrations, 
           live environments, and real-world use cases.
         </p>
@@ -49,16 +49,16 @@ export default function ShowcasePage() {
       {/* Quick Navigation */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         <Link href="#agentverse" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-blue-600">🤖 AgentVerse</h3>
-          <p className="text-sm text-gray-600">Multi-LLM Simulation</p>
+          <h3 className="font-semibold text-blue-700">🤖 AgentVerse</h3>
+          <p className="text-sm text-gray-700">Multi-LLM Simulation</p>
         </Link>
         <Link href="#tactical" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-green-600">⚡ Tactical Command</h3>
-          <p className="text-sm text-gray-600">Operations Dashboard</p>
+          <h3 className="font-semibold text-green-700">⚡ Tactical Command</h3>
+          <p className="text-sm text-gray-700">Operations Dashboard</p>
         </Link>
         <Link href="#synergy" className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-          <h3 className="font-semibold text-purple-600">🔐 SYMBI-Synergy</h3>
-          <p className="text-sm text-gray-600">Trust Infrastructure</p>
+          <h3 className="font-semibold text-purple-700">🔐 SYMBI-Synergy</h3>
+          <p className="text-sm text-gray-700">Trust Infrastructure</p>
         </Link>
       </div>
 
@@ -70,67 +70,67 @@ export default function ShowcasePage() {
               🤖
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-blue-800">AgentVerse</h2>
-              <p className="text-blue-600">Multi-LLM Simulation Framework</p>
+              <h2 className="text-3xl font-bold text-blue-900">AgentVerse</h2>
+              <p className="text-blue-700">Multi-LLM Simulation Framework</p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Live Demonstration</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Live Demonstration</h3>
               <div className="bg-white rounded-lg p-6 border">
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">Agent Simulation Status</span>
+                    <span className="text-sm font-medium text-gray-700">Agent Simulation Status</span>
                     <Badge variant="success">Running</Badge>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full w-3/4"></div>
                   </div>
                 </div>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex justify-between">
                     <span>Active Agents:</span>
-                    <span className="font-mono">12</span>
+                    <span className="font-mono text-gray-900">12</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Tasks Completed:</span>
-                    <span className="font-mono">847</span>
+                    <span className="font-mono text-gray-900">847</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Success Rate:</span>
-                    <span className="font-mono text-green-600">94.2%</span>
+                    <span className="font-mono text-green-700">94.2%</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors">
+                <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors font-medium">
                   Launch Interactive Demo
                 </button>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Key Features</h3>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Key Features</h3>
+              <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-600 mr-2">✓</span>
                   <div>
                     <strong>Multi-Agent Coordination:</strong> Orchestrate complex workflows across multiple LLMs
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-600 mr-2">✓</span>
                   <div>
                     <strong>SYMBI Protocol Integration:</strong> Constitutional AI with trust receipts
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-600 mr-2">✓</span>
                   <div>
                     <strong>Simulation Environments:</strong> Research, development, and production scenarios
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-600 mr-2">✓</span>
                   <div>
                     <strong>CLI Management:</strong> Command-line tools for agent lifecycle management
                   </div>
@@ -138,7 +138,7 @@ export default function ShowcasePage() {
               </ul>
               
               <div className="mt-6">
-                <Link href="/research" className="text-blue-600 hover:underline">
+                <Link href="/research" className="text-blue-700 hover:underline font-medium">
                   → View Research Papers
                 </Link>
               </div>
@@ -155,64 +155,64 @@ export default function ShowcasePage() {
               ⚡
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-green-800">Tactical Command Interface</h2>
-              <p className="text-green-600">Real-time Operations Dashboard</p>
+              <h2 className="text-3xl font-bold text-green-900">Tactical Command Interface</h2>
+              <p className="text-green-700">Real-time Operations Dashboard</p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Dashboard Preview</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Dashboard Preview</h3>
               <div className="bg-white rounded-lg p-6 border">
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="text-center p-3 bg-gray-50 rounded">
-                    <div className="text-2xl font-bold text-green-600">24</div>
-                    <div className="text-sm text-gray-600">Active Agents</div>
+                    <div className="text-2xl font-bold text-green-700">24</div>
+                    <div className="text-sm text-gray-700">Active Agents</div>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded">
-                    <div className="text-2xl font-bold text-blue-600">1.2k</div>
-                    <div className="text-sm text-gray-600">Messages/hr</div>
+                    <div className="text-2xl font-bold text-blue-700">1.2k</div>
+                    <div className="text-sm text-gray-700">Messages/hr</div>
                   </div>
                 </div>
                 <div className="mb-4">
-                  <div className="text-sm font-medium mb-2">RAG Query Performance</div>
+                  <div className="text-sm font-medium mb-2 text-gray-800">RAG Query Performance</div>
                   <div className="flex items-center">
                     <div className="flex-1 bg-gray-200 rounded-full h-2 mr-2">
                       <div className="bg-green-600 h-2 rounded-full w-5/6"></div>
                     </div>
-                    <span className="text-sm font-mono">420ms</span>
+                    <span className="text-sm font-mono text-gray-700">420ms</span>
                   </div>
                 </div>
-                <button className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors">
+                <button className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors font-medium">
                   Open Live Dashboard
                 </button>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">API Endpoints</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">API Endpoints</h3>
               <div className="space-y-3 text-sm font-mono">
                 <div className="flex items-center p-2 bg-white rounded border">
                   <Badge variant="info" className="mr-2">GET</Badge>
-                  <span>/api/agents</span>
+                  <span className="text-gray-800">/api/agents</span>
                 </div>
                 <div className="flex items-center p-2 bg-white rounded border">
                   <Badge variant="success" className="mr-2">POST</Badge>
-                  <span>/api/agents/register</span>
+                  <span className="text-gray-800">/api/agents/register</span>
                 </div>
                 <div className="flex items-center p-2 bg-white rounded border">
                   <Badge variant="success" className="mr-2">POST</Badge>
-                  <span>/api/rag/retrieve</span>
+                  <span className="text-gray-800">/api/rag/retrieve</span>
                 </div>
                 <div className="flex items-center p-2 bg-white rounded border">
                   <Badge variant="warning" className="mr-2">PUT</Badge>
-                  <span>/api/exec/run</span>
+                  <span className="text-gray-800">/api/exec/run</span>
                 </div>
               </div>
               
               <div className="mt-6">
-                <h4 className="font-semibold mb-2">Integration Features</h4>
-                <ul className="space-y-1 text-sm">
+                <h4 className="font-semibold mb-2 text-gray-900">Integration Features</h4>
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Weaviate vector database for RAG</li>
                   <li>• OpenAI embeddings integration</li>
                   <li>• Real-time message bus</li>
@@ -232,15 +232,15 @@ export default function ShowcasePage() {
               🔐
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-purple-800">SYMBI-Synergy</h2>
-              <p className="text-purple-600">Enterprise Trust Infrastructure</p>
+              <h2 className="text-3xl font-bold text-purple-900">SYMBI-Synergy</h2>
+              <p className="text-purple-700">Enterprise Trust Infrastructure</p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Trust Receipt Sample</h3>
-              <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Trust Receipt Sample</h3>
+              <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto shadow-inner">
                 <pre>{`{
   "version": "1.0",
   "session_id": "sess_2025_001",
@@ -256,29 +256,29 @@ export default function ShowcasePage() {
   "signature": "ed25519:valid"
 }`}</pre>
               </div>
-              <button className="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition-colors">
+              <button className="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition-colors font-medium">
                 Verify Receipt Chain
               </button>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Enterprise Features</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Enterprise Features</h3>
               <div className="space-y-4">
                 <div className="p-4 bg-white rounded border">
-                  <h4 className="font-semibold text-purple-700 mb-2">🏢 SIEM Integration</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-purple-800 mb-2">🏢 SIEM Integration</h4>
+                  <p className="text-sm text-gray-700">
                     Direct integration with enterprise security information and event management systems
                   </p>
                 </div>
                 <div className="p-4 bg-white rounded border">
-                  <h4 className="font-semibold text-purple-700 mb-2">📊 Compliance Dashboard</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-purple-800 mb-2">📊 Compliance Dashboard</h4>
+                  <p className="text-sm text-gray-700">
                     Real-time monitoring and reporting for regulatory compliance
                   </p>
                 </div>
                 <div className="p-4 bg-white rounded border">
-                  <h4 className="font-semibold text-purple-700 mb-2">🔗 Hash Chain Validation</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-purple-800 mb-2">🔗 Hash Chain Validation</h4>
+                  <p className="text-sm text-gray-700">
                     Immutable audit trails with cryptographic verification
                   </p>
                 </div>
@@ -290,31 +290,31 @@ export default function ShowcasePage() {
 
       {/* Integration Workflow */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-center mb-8">End-to-End Integration</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">End-to-End Integration</h2>
         <div className="bg-gray-50 rounded-lg p-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-2">
                 1
               </div>
-              <h3 className="font-semibold">Agent Simulation</h3>
-              <p className="text-sm text-gray-600">AgentVerse creates multi-LLM workflows</p>
+              <h3 className="font-semibold text-gray-900">Agent Simulation</h3>
+              <p className="text-sm text-gray-700">AgentVerse creates multi-LLM workflows</p>
             </div>
             <div className="text-2xl text-gray-400">→</div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-2">
                 2
               </div>
-              <h3 className="font-semibold">Command & Control</h3>
-              <p className="text-sm text-gray-600">Tactical Interface manages operations</p>
+              <h3 className="font-semibold text-gray-900">Command & Control</h3>
+              <p className="text-sm text-gray-700">Tactical Interface manages operations</p>
             </div>
             <div className="text-2xl text-gray-400">→</div>
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-2">
                 3
               </div>
-              <h3 className="font-semibold">Trust Validation</h3>
-              <p className="text-sm text-gray-600">SYMBI-Synergy generates receipts</p>
+              <h3 className="font-semibold text-gray-900">Trust Validation</h3>
+              <p className="text-sm text-gray-700">SYMBI-Synergy generates receipts</p>
             </div>
           </div>
         </div>
@@ -322,19 +322,19 @@ export default function ShowcasePage() {
 
       {/* Call to Action */}
       <section className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Experience SYMBI?</h2>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold mb-4 text-gray-900">Ready to Experience SYMBI?</h2>
+        <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
           Join the future of constitutional AI with our comprehensive platform for 
           trust, quality, and governance.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             Start Free Trial
           </button>
-          <Link href="/research" className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+          <Link href="/research" className="border border-blue-600 text-blue-700 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium">
             View Documentation
           </Link>
-          <Link href="https://github.com/symbi-ecosystem" className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <Link href="https://github.com/symbi-ecosystem" className="border border-gray-300 text-gray-800 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
             Explore on GitHub
           </Link>
         </div>

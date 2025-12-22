@@ -79,7 +79,7 @@ export default function VaultPage() {
                 ))}
               </ul>
               <Link
-                href={`https://github.com/s8ken/SYMBI-Vault/tree/main/SYMBI-vault/${collection.path}`}
+                href={`https://github.com/s8ken/SYMBI-Vault/tree/main/${collection.path}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[var(--color-accent)]"
