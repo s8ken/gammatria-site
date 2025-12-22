@@ -89,13 +89,19 @@ const dataFlows = [
     from: "Gammatria",
     to: "SYMBI.world",
     type: "Research & Proofs",
-    description: "Academic research, proof concepts, and interactive demonstrations"
+    description: "Academic research, LVS/R_m specifications, and validation experiments for interactive demonstrations"
+  },
+  {
+    from: "SYMBI.world",
+    to: "Gammatria",
+    type: "Empirical Data",
+    description: "High-resonance conversation archives from symbi.world used for LVS and R_m validation"
   },
   {
     from: "YSeeku.com",
     to: "Gammatria",
     type: "Research Insights",
-    description: "Academic findings, research data, and collaborative studies"
+    description: "Academic findings, research data, and collaborative studies on Linguistic Vector Steering"
   },
   {
     from: "SYMBI.world",

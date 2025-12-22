@@ -91,7 +91,7 @@ export function SiteHeader() {
                 rel={item.external ? "noopener noreferrer" : undefined}
                 className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
                   item.accent
-                    ? "bg-[var(--color-accent)] text-black font-bold hover:bg-[var(--color-accent)]/90"
+                    ? "bg-[var(--color-accent)] !text-midnight font-bold hover:bg-[var(--color-accent)]/90"
                     : "border border-white/15 text-white/80 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
                 }`}
                 onClick={() => setOpen(false)}

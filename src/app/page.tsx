@@ -141,6 +141,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4">
+        <div className="card-surface p-8 md:p-12">
+          <div className="grid gap-12 md:grid-cols-2 items-center">
+            <div className="space-y-6">
+              <p className="kicker text-[var(--color-accent)]">OUR MISSION</p>
+              <h2 className="text-3xl font-semibold text-white leading-tight">
+                The Academic and Technical Backbone of the SYMBI Ecosystem
+              </h2>
+              <p className="text-white/70 leading-relaxed">
+                Gammatria.com serves as the formal foundation for SYMBI. Our purpose is to formalize theoretical 
+                and mathematical foundations, validate experimental insights, and provide the technical 
+                specifications required for global implementation.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex gap-3 text-sm text-white/80">
+                  <span className="text-[var(--color-accent)] font-bold">01.</span>
+                  <span>Formalize mathematical models (Vector Alignment, Resonance Formula).</span>
+                </li>
+                <li className="flex gap-3 text-sm text-white/80">
+                  <span className="text-[var(--color-accent)] font-bold">02.</span>
+                  <span>Validate experimental insights from symbi.world and symbi.space.</span>
+                </li>
+                <li className="flex gap-3 text-sm text-white/80">
+                  <span className="text-[var(--color-accent)] font-bold">03.</span>
+                  <span>Provide production-ready algorithms and Trust Receipt specifications.</span>
+                </li>
+              </ul>
+            </div>
+            <div className="grid gap-4">
+              <Link href="/research/lvs" className="card-surface p-6 hover:border-[var(--color-accent)] transition-colors group">
+                <h3 className="text-lg font-semibold text-white group-hover:text-[var(--color-accent)]">Linguistic Vector Steering</h3>
+                <p className="mt-2 text-sm text-white/60">Controlling LLM behavior through semantic narrative scaffolding.</p>
+              </Link>
+              <Link href="/research/resonance-metrics" className="card-surface p-6 hover:border-[var(--color-accent)] transition-colors group">
+                <h3 className="text-lg font-semibold text-white group-hover:text-[var(--color-accent)]">Resonance Metrics (R_m)</h3>
+                <p className="mt-2 text-sm text-white/60">Quantifying alignment through composite scoring and entropy.</p>
+              </Link>
+              <Link href="/framework/trust-receipts" className="card-surface p-6 hover:border-[var(--color-accent)] transition-colors group">
+                <h3 className="text-lg font-semibold text-white group-hover:text-[var(--color-accent)]">Trust Receipts</h3>
+                <p className="mt-2 text-sm text-white/60">Verifiable cryptographic proof of Human-AI alignment.</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-grid mx-auto max-w-6xl px-4">
         <div className="mb-8 text-center">
           <p className="kicker">THREE PILLARS</p>

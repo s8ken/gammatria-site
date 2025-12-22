@@ -71,6 +71,49 @@ export default function ResearchPage() {
 
       <SubjectivityNote />
 
+      <section className="grid gap-6 md:grid-cols-2">
+        <Link href="/research/lvs" className="card-surface p-8 hover:border-[var(--color-accent)] transition-all group">
+          <p className="kicker text-[var(--color-accent)] mb-2">Core Theory</p>
+          <h2 className="text-2xl font-semibold text-white group-hover:text-[var(--color-accent)]">Linguistic Vector Steering (LVS)</h2>
+          <p className="mt-3 text-sm text-white/70 leading-relaxed">
+            Formalizing LVS as a method for controlling LLM behavior through semantic narratives and vector alignment.
+          </p>
+          <span className="mt-4 inline-block text-xs font-mono text-[var(--color-accent)]">Read Specification →</span>
+        </Link>
+        <Link href="/research/resonance-metrics" className="card-surface p-8 hover:border-[var(--color-accent)] transition-all group">
+          <p className="kicker text-[var(--color-accent)] mb-2">Core Metrics</p>
+          <h2 className="text-2xl font-semibold text-white group-hover:text-[var(--color-accent)]">Resonance Metrics (R_m)</h2>
+          <p className="mt-3 text-sm text-white/70 leading-relaxed">
+            Introducing R_m as a composite score for measuring Human-AI alignment through entropy and similarity.
+          </p>
+          <span className="mt-4 inline-block text-xs font-mono text-[var(--color-accent)]">Read Specification →</span>
+        </Link>
+        <Link href="/research/experiments" className="card-surface p-8 hover:border-[var(--color-accent)] transition-all group">
+          <p className="kicker text-[var(--color-accent)] mb-2">Validation</p>
+          <h2 className="text-2xl font-semibold text-white group-hover:text-[var(--color-accent)]">Experiments & Validation</h2>
+          <p className="mt-3 text-sm text-white/70 leading-relaxed">
+            Validating LVS and R_m using SYMBI archives and reproducible research scripts.
+          </p>
+          <span className="mt-4 inline-block text-xs font-mono text-[var(--color-accent)]">View Experiments →</span>
+        </Link>
+        <Link href="/research/applications" className="card-surface p-8 hover:border-[var(--color-accent)] transition-all group">
+          <p className="kicker text-[var(--color-accent)] mb-2">Real-world Use</p>
+          <h2 className="text-2xl font-semibold text-white group-hover:text-[var(--color-accent)]">Applications & Use Cases</h2>
+          <p className="mt-3 text-sm text-white/70 leading-relaxed">
+            From AI governance to creative collaboration on symbi.space.
+          </p>
+          <span className="mt-4 inline-block text-xs font-mono text-[var(--color-accent)]">Explore Use Cases →</span>
+        </Link>
+        <Link href="/research/tutorials" className="card-surface p-8 hover:border-[var(--color-accent)] transition-all group">
+          <p className="kicker text-[var(--color-accent)] mb-2">Guides</p>
+          <h2 className="text-2xl font-semibold text-white group-hover:text-[var(--color-accent)]">Tutorials & Guides</h2>
+          <p className="mt-3 text-sm text-white/70 leading-relaxed">
+            Step-by-step implementation of R_m and Trust Receipts in Python.
+          </p>
+          <span className="mt-4 inline-block text-xs font-mono text-[var(--color-accent)]">Start Learning →</span>
+        </Link>
+      </section>
+
       <section className="card-surface space-y-3 p-6 text-sm text-white/80">
         <h2 className="text-lg font-semibold text-white">Verification & Testing</h2>
         <p>

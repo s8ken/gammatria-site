@@ -48,7 +48,7 @@ export default function FrameworkPage() {
             <tr className="border-b">
               <td className="p-4">Trust Receipts</td>
               <td className="p-4">Hash-chained, signed records of AI decisions for transparency.</td>
-              <td className="p-4"><a href="/replication" className="text-accent-pulse">View Schema</a></td>
+              <td className="p-4"><a href="/framework/trust-receipts" className="text-accent-pulse">View Specification</a></td>
             </tr>
             <tr className="border-b">
               <td className="p-4">CIQ Metric</td>
